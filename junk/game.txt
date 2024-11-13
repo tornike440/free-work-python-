@@ -1,0 +1,166 @@
+import pygame
+import random
+import sys
+
+# Initialize Pygame
+pygame.init()
+
+# Constants
+SCREEN_WIDTH = 300
+SCREEN_HEIGHT = 600
+BLOCK_SIZE = 30
+ROWS = SCREEN_HEIGHT // BLOCK_SIZE
+COLS = SCREEN_WIDTH // BLOCK_SIZE
+
+# Colors
+WHITE = (255, 255, 255)
+CYAN = (0, 255, 255)
+BLUE = (0, 0, 255)
+ORANGE = (255, 165, 0)
+YELLOW = (255, 255, 0)
+GREEN = (0, 255, 0)
+PURPLE = (128, 0, 128)
+RED = (255, 0, 0)
+BLACK = (0, 0, 0)
+
+# Shape formats
+S = [[1, 1, 0],
+     [0, 1, 1]]
+
+Z = [[0, 1, 1],
+     [1, 1, 0]]
+
+I = [[1, 1, 1, 1]]
+
+O = [[1, 1],
+     [1, 1]]
+
+J = [[1, 0, 0],
+     [1, 1, 1]]
+
+L = [[0, 0, 1],
+     [1, 1, 1]]
+
+T = [[0, 1, 0],
+     [1, 1, 1]]
+
+SHAPES = [S, Z, I, O, J, L, T]
+SHAPES_COLORS = [CYAN, RED, BLUE, YELLOW, GREEN, ORANGE, PURPLE]
+
+# Initialize the game screen
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Tetris')
+
+# Class to represent the falling block
+class Piece(object):
+    def __init__(self, shape, color):
+        self.shape = shape
+        self.color = color
+        self.x = COLS // 2 - len(shape[0]) // 2
+        self.y = 0
+
+    def rotate(self):
+        self.shape = [list(row) for row in zip(*self.shape[::-1])]
+
+    def get_positions(self):
+        positions = []
+        for i, row in enumerate(self.shape):
+            for j, cell in enumerate(row):
+                if cell:
+                    positions.append((self.x + j, self.y + i))
+        return positions
+
+# Function to check if a piece is in a valid position
+def valid_move(piece, grid):
+    for x, y in piece.get_positions():
+        if x < 0 or x >= COLS or y >= ROWS or grid[y][x]:
+            return False
+    return True
+
+# Function to clear full lines
+def clear_lines(grid):
+    full_lines = []
+    for i, row in enumerate(grid):
+        if all(cell != 0 for cell in row):
+            full_lines.append(i)
+
+    for line in full_lines:
+        del grid[line]
+        grid.insert(0, [0] * COLS)
+
+    return len(full_lines)
+
+# Function to draw the grid and the pieces
+def draw_grid(screen, grid):
+    for y in range(ROWS):
+        for x in range(COLS):
+            pygame.draw.rect(screen, WHITE if grid[y][x] == 0 else grid[y][x],
+                             (x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
+            pygame.draw.rect(screen, BLACK, (x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE), 1)
+
+# Function to draw the falling piece
+def draw_piece(screen, piece):
+    for x, y in piece.get_positions():
+        pygame.draw.rect(screen, piece.color, (x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
+
+# Function to move the piece down
+def drop_piece(piece, grid):
+    piece.y += 1
+    if not valid_move(piece, grid):
+        piece.y -= 1
+        for x, y in piece.get_positions():
+            grid[y][x] = piece.color
+        return True
+    return False
+
+# Main game loop
+def game():
+    grid = [[0] * COLS for _ in range(ROWS)]
+    current_piece = Piece(random.choice(SHAPES), random.choice(SHAPES_COLORS))
+    clock = pygame.time.Clock()
+    game_over = False
+    score = 0
+
+    while not game_over:
+        screen.fill(BLACK)
+        draw_grid(screen, grid)
+        draw_piece(screen, current_piece)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                game_over = True
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    current_piece.x -= 1
+                    if not valid_move(current_piece, grid):
+                        current_piece.x += 1
+                if event.key == pygame.K_RIGHT:
+                    current_piece.x += 1
+                    if not valid_move(current_piece, grid):
+                        current_piece.x -= 1
+                if event.key == pygame.K_DOWN:
+                    current_piece.y += 1
+                    if not valid_move(current_piece, grid):
+                        current_piece.y -= 1
+                if event.key == pygame.K_UP:
+                    current_piece.rotate()
+                    if not valid_move(current_piece, grid):
+                        current_piece.rotate()
+                        current_piece.rotate()
+                        current_piece.rotate()
+
+        if drop_piece(current_piece, grid):
+            score += clear_lines(grid)
+            current_piece = Piece(random.choice(SHAPES), random.choice(SHAPES_COLORS))
+            if not valid_move(current_piece, grid):
+                game_over = True
+
+        pygame.display.flip()
+        clock.tick(10)
+
+    print(f"Game Over! Your score: {score}")
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    game()
