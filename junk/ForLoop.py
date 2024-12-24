@@ -13,6 +13,7 @@ goto(0,-250)
 pendown()
 left(180)
 x=0
+
 for i in range(0,10):
     x=x+1
     y=360/x

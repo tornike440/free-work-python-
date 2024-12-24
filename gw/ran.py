@@ -1,13 +1,12 @@
 import random
-
 # List of greetings
 greetings = [
-    "Hello there!",
-    "Hi, how are you?",
-    "Hey, what's up?",
-    "Good day!",
-    "Greetings, friend!"
-]
+    "კეთილი იყოს თქვენი მობრძანება LPB -- Less Persent Bank-ში",
+   "დილა მშვიდობისა! კეთილი იყოს თქვენი მობრძანება LPB -- Less Persent Bank-ში",
+    "შუადღე მშვიდობისა! კეთილი იყოს თქვენი მობრძანება LPB -- Less Persent Bank-ში",
+     "საღამო მშვიდობისა! კეთილი იყოს თქვენი მობრძანება LPB -- Less Persent Bank-ში",
+     "გამარჯობა როგორ ბრძანდებით, გმადლობთ რომ ირჩევთ ჩვენს ბანკს"
+ ]
 
-# Select and print one random greeting
+# # Select and print one random greeting
 print(random.choice(greetings))

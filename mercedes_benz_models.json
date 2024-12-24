@@ -1,0 +1,821 @@
+{
+    "S-Class": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "S 500",
+            "car_body": "sedan",
+            "engine": "3.0L Inline-6 Turbo",
+            "fuel": "petrol",
+            "price": "100000$ - 150000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "S 580",
+            "car_body": "sedan",
+            "engine": "4.0L V8 Turbo",
+            "fuel": "petrol",
+            "price": "120000$ - 170000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "S 500 e",
+            "car_body": "sedan",
+            "engine": "3.0L Inline-6 Hybrid",
+            "fuel": "hybrid petrol",
+            "price": "110000$ - 160000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG S 63",
+            "car_body": "sedan",
+            "engine": "4.0L V8 Turbo",
+            "fuel": "petrol",
+            "price": "150000$ - 200000$",
+            "year": 2022
+        }
+    ],
+    "AMG GT": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GT 43",
+            "car_body": "coupe",
+            "engine": "3.0L Inline-6 Turbo",
+            "fuel": "petrol",
+            "price": "90000$ - 120000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GT 53",
+            "car_body": "coupe",
+            "engine": "3.0L Inline-6 Turbo Hybrid",
+            "fuel": "hybrid petrol",
+            "price": "100000$ - 130000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GT Black Series",
+            "car_body": "coupe",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "250000$ - 300000$",
+            "year": 2022
+        }
+    ],
+    "AMG SL": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG SL 55",
+            "car_body": "convertible",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "130000$ - 160000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG SL 63",
+            "car_body": "convertible",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "150000$ - 180000$",
+            "year": 2022
+        }
+    ],
+    "AMG ONE": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG ONE",
+            "car_body": "hypercar",
+            "engine": "1.6L V6 Turbo Hybrid",
+            "fuel": "hybrid petrol",
+            "price": "2750000$ - 3000000$",
+            "year": 2022
+        }
+    ],
+    "GLA": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "GLA 200",
+            "car_body": "SUV",
+            "engine": "1.3L Inline-4 Turbo",
+            "fuel": "petrol",
+            "price": "35000$ - 45000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GLA 35",
+            "car_body": "SUV",
+            "engine": "2.0L Inline-4 Turbo",
+            "fuel": "petrol",
+            "price": "50000$ - 70000$",
+            "year": 2022
+        }
+    ],
+    "GLB": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "GLB 200",
+            "car_body": "SUV",
+            "engine": "1.3L Inline-4 Turbo",
+            "fuel": "petrol",
+            "price": "35000$ - 45000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GLB 35",
+            "car_body": "SUV",
+            "engine": "2.0L Inline-4 Turbo",
+            "fuel": "petrol",
+            "price": "50000$ - 70000$",
+            "year": 2022
+        }
+    ],
+    "GLC": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "GLC 300",
+            "car_body": "SUV",
+            "engine": "2.0L Inline-4 Turbo",
+            "fuel": "hybrid petrol",
+            "price": "55000$ - 70000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GLC 43",
+            "car_body": "SUV",
+            "engine": "3.0L V6 Biturbo",
+            "fuel": "petrol",
+            "price": "80000$ - 100000$",
+            "year": 2022
+        }
+    ],
+    "GLE": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "GLE 350",
+            "car_body": "SUV",
+            "engine": "2.0L Inline-4 Turbo",
+            "fuel": "petrol",
+            "price": "60000$ - 75000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "GLE 580",
+            "car_body": "SUV",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "80000$ - 100000$",
+            "year": 2022
+        }
+    ],
+    "GLS": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "GLS 450",
+            "car_body": "SUV",
+            "engine": "3.0L Inline-6 Turbo",
+            "fuel": "petrol",
+            "price": "85000$ - 100000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG GLS 63",
+            "car_body": "SUV",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "120000$ - 150000$",
+            "year": 2022
+        }
+    ],
+    "G-Class": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "G 500",
+            "car_body": "SUV",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "130000$ - 160000$",
+            "year": 2022
+        },
+        {
+            "brand": "Mercedes-Benz",
+            "model": "AMG G 63",
+            "car_body": "SUV",
+            "engine": "4.0L V8 Biturbo",
+            "fuel": "petrol",
+            "price": "150000$ - 180000$",
+            "year": 2022
+        }
+    ],
+    "EQA": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "EQA 250",
+            "car_body": "SUV",
+            "engine": "140 kW Electric Motor",
+            "fuel": "electric",
+            "price": "50000$ - 60000$",
+            "year": 2022
+        }
+    ],
+    "EQB": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "EQB 300 4MATIC",
+            "car_body": "SUV",
+            "engine": "168 kW Electric Motor",
+            "fuel": "electric",
+            "price": "55000$ - 65000$",
+            "year": 2022
+        }
+    ],
+    "EQE": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "EQE 350",
+            "car_body": "sedan",
+            "engine": "215 kW Electric Motor",
+            "fuel": "electric",
+            "price": "70000$ - 80000$",
+            "year": 2022
+        }
+    ],
+    "EQE SUV": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "EQE 350 SUV",
+            "car_body": "SUV",
+            "engine": "215 kW Electric Motor",
+            "fuel": "electric",
+            "price": "75000$ - 85000$",
+            "year": 2022
+        }
+    ],
+    "EQT": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "EQT 300",
+            "car_body": "MPV",
+            "engine": "90 kW Electric Motor",
+            "fuel": "electric",
+            "price": "40000$ - 50000$",
+            "year": 2022
+        }
+    ],
+    "EQV": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "EQV 300",
+            "car_body": "MPV",
+            "engine": "150 kW Electric Motor",
+            "fuel": "electric",
+            "price": "70000$ - 80000$",
+            "year": 2022
+        }
+    ],
+    "Citan": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "Citan 110 CDI",
+            "car_body": "van",
+            "engine": "1.5L Inline-4 Diesel",
+            "fuel": "diesel",
+            "price": "25000$ - 35000$",
+            "year": 2022
+        }
+    ],
+    "Vito": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "Vito 119 CDI",
+            "car_body": "van",
+            "engine": "2.0L Inline-4 Diesel",
+            "fuel": "diesel",
+            "price": "40000$ - 50000$",
+            "year": 2022
+        }
+    ],
+    "Sprinter": [
+        {
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 316 CDI",
+            "car_body": "van",
+            "engine": "2.0L Inline-4 Diesel",
+            "fuel": "diesel",
+            "price": "45000$ - 55000$",
+            "year": 2022
+        }
+    ]
+
+    [
+        {
+          "brand": "Mercedes-Benz",
+          "model": "A 160",
+          "car_body": "hatchback",
+          "engine": "1.3L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "25000$ - 35000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "A 180",
+          "car_body": "hatchback",
+          "engine": "1.3L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "27000$ - 37000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "B 200",
+          "car_body": "hatchback",
+          "engine": "1.3L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "28000$ - 38000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "B 220",
+          "car_body": "hatchback",
+          "engine": "1.3L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "30000$ - 40000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "C 200",
+          "car_body": "sedan",
+          "engine": "1.5L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "35000$ - 45000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "C 300",
+          "car_body": "sedan",
+          "engine": "2.0L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "40000$ - 50000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "CLA 180",
+          "car_body": "coupe-sedan",
+          "engine": "1.3L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "29000$ - 39000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "CLA 250",
+          "car_body": "coupe-sedan",
+          "engine": "2.0L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "35000$ - 45000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "CLE 300",
+          "car_body": "coupe-sedan",
+          "engine": "2.0L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "40000$ - 50000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "CLE 450",
+          "car_body": "coupe-sedan",
+          "engine": "3.0L Inline-6 Turbo",
+          "fuel": "petrol",
+          "price": "50000$ - 60000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "E 200",
+          "car_body": "sedan",
+          "engine": "2.0L Inline-4 Turbo",
+          "fuel": "petrol",
+          "price": "45000$ - 55000$",
+          "year": 2022
+        },
+        {
+          "brand": "Mercedes-Benz",
+          "model": "E 300",
+          "car_body": "sedan",
+          "engine": "3.0L Inline-6 Turbo",
+          "fuel": "petrol",
+          "price": "50000$ - 60000$",
+          "year": 2022
+        }
+        ]
+
+        [
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 220 CDI",
+              "car_body": "coupe-sedan",
+              "engine": "2.1L Inline-4",
+              "fuel": "diesel",
+              "price": "15000$ - 20000$",
+              "year": 2015
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 250 CDI",
+              "car_body": "coupe-sedan",
+              "engine": "2.1L Inline-4",
+              "fuel": "diesel",
+              "price": "17000$ - 22000$",
+              "year": 2015
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Twin-Turbo V6",
+              "fuel": "gasoline",
+              "price": "25000$ - 32000$",
+              "year": 2015
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 500",
+              "car_body": "coupe-sedan",
+              "engine": "4.7L Twin-Turbo V8",
+              "fuel": "gasoline",
+              "price": "30000$ - 40000$",
+              "year": 2015
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 63 AMG",
+              "car_body": "coupe-sedan",
+              "engine": "5.5L Twin-Turbo V8",
+              "fuel": "gasoline",
+              "price": "45000$ - 60000$",
+              "year": 2015
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS Shooting Brake",
+              "car_body": "wagon",
+              "engine": "varied",
+              "fuel": "varied",
+              "price": "20000$ - 45000$",
+              "year": 2015
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 220 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.1L Inline-4",
+              "fuel": "diesel",
+              "price": "20000$ - 25000$",
+              "year": 2016
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 250 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.1L Inline-4",
+              "fuel": "diesel",
+              "price": "22000$ - 27000$",
+              "year": 2016
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 500",
+              "car_body": "coupe-sedan",
+              "engine": "4.7L Twin-Turbo V8",
+              "fuel": "gasoline",
+              "price": "30000$ - 42000$",
+              "year": 2016
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 63 AMG S",
+              "car_body": "coupe-sedan",
+              "engine": "5.5L Twin-Turbo V8",
+              "fuel": "gasoline",
+              "price": "50000$ - 70000$",
+              "year": 2016
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 220 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.1L Inline-4",
+              "fuel": "diesel",
+              "price": "22000$ - 28000$",
+              "year": 2017
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 250 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.1L Inline-4",
+              "fuel": "diesel",
+              "price": "25000$ - 30000$",
+              "year": 2017
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Twin-Turbo V6",
+              "fuel": "gasoline",
+              "price": "35000$ - 45000$",
+              "year": 2017
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 500",
+              "car_body": "coupe-sedan",
+              "engine": "4.7L Twin-Turbo V8",
+              "fuel": "gasoline",
+              "price": "40000$ - 50000$",
+              "year": 2017
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 450 4MATIC",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "50000$ - 70000$",
+              "year": 2018
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.9L Inline-6",
+              "fuel": "diesel",
+              "price": "45000$ - 65000$",
+              "year": 2018
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 53 AMG 4MATIC+",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "60000$ - 80000$",
+              "year": 2018
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 450 4MATIC",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "55000$ - 75000$",
+              "year": 2019
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.9L Inline-6",
+              "fuel": "diesel",
+              "price": "48000$ - 68000$",
+              "year": 2019
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 53 AMG 4MATIC+",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "65000$ - 85000$",
+              "year": 2019
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 450 4MATIC",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "57000$ - 77000$",
+              "year": 2020
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.9L Inline-6",
+              "fuel": "diesel",
+              "price": "50000$ - 70000$",
+              "year": 2020
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 53 AMG 4MATIC+",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "70000$ - 90000$",
+              "year": 2020
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 450 4MATIC",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "58000$ - 78000$",
+              "year": 2021
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.9L Inline-6",
+              "fuel": "diesel",
+              "price": "52000$ - 72000$",
+              "year": 2021
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 53 AMG 4MATIC+",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "75000$ - 95000$",
+              "year": 2021
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 450 4MATIC",
+              "car_body": "coupe-sedan",
+              "engine": "3.0L Inline-6 with EQ Boost",
+              "fuel": "mild-hybrid gasoline",
+              "price": "60000$ - 80000$",
+              "year": 2022
+            },
+            {
+              "brand": "Mercedes-Benz",
+              "model": "CLS 400 d",
+              "car_body": "coupe-sedan",
+              "engine": "2.9L Inline-6",
+              "fuel": "diesel",
+              "price": "54000$ - 74000$",
+              "year": 2022
+            },
+            {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 350 4MATIC",
+                "car_body": "coupe-sedan",
+                "engine": "2.0L Inline-4 Turbo",
+                "fuel": "petrol",
+                "price": "52000$ - 72000$",
+                "year": 2022
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 450 4MATIC",
+                "car_body": "coupe-sedan",
+                "engine": "3.0L Inline-6 Turbo",
+                "fuel": "petrol",
+                "price": "56000$ - 76000$",
+                "year": 2022
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 400 d",
+                "car_body": "coupe-sedan",
+                "engine": "2.9L Inline-6 Diesel",
+                "fuel": "diesel",
+                "price": "54000$ - 74000$",
+                "year": 2022
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "AMG CLS 53 4MATIC+",
+                "car_body": "coupe-sedan",
+                "engine": "3.0L Inline-6 Turbo",
+                "fuel": "petrol",
+                "price": "82000$ - 92000$",
+                "year": 2022
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "AMG CLS 63 S 4MATIC+",
+                "car_body": "coupe-sedan",
+                "engine": "4.0L V8 Biturbo",
+                "fuel": "petrol",
+                "price": "97000$ - 117000$",
+                "year": 2022
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 350 4MATIC",
+                "car_body": "coupe-sedan",
+                "engine": "2.0L Inline-4 Turbo",
+                "fuel": "petrol",
+                "price": "53000$ - 73000$",
+                "year": 2023
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 450 4MATIC",
+                "car_body": "coupe-sedan",
+                "engine": "3.0L Inline-6 Turbo",
+                "fuel": "petrol",
+                "price": "57000$ - 77000$",
+                "year": 2023
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 400 d",
+                "car_body": "coupe-sedan",
+                "engine": "2.9L Inline-6 Diesel",
+                "fuel": "diesel",
+                "price": "55000$ - 75000$",
+                "year": 2023
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "AMG CLS 53 4MATIC+",
+                "car_body": "coupe-sedan",
+                "engine": "3.0L Inline-6 Turbo",
+                "fuel": "petrol",
+                "price": "83000$ - 93000$",
+                "year": 2023
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "AMG CLS 63 S 4MATIC+",
+                "car_body": "coupe-sedan",
+                "engine": "4.0L V8 Biturbo",
+                "fuel": "petrol",
+                "price": "98000$ - 118000$",
+                "year": 2023
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 350 4MATIC",
+                "car_body": "coupe-sedan",
+                "engine": "2.0L Inline-4 Turbo",
+                "fuel": "petrol",
+                "price": "54000$ - 74000$",
+                "year": 2024
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 450 4MATIC",
+                "car_body": "coupe-sedan",
+                "engine": "3.0L Inline-6 Turbo",
+                "fuel": "petrol",
+                "price": "58000$ - 78000$",
+                "year": 2024
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "CLS 400 d",
+                "car_body": "coupe-sedan",
+                "engine": "2.9L Inline-6 Diesel",
+                "fuel": "diesel",
+                "price": "56000$ - 76000$",
+                "year": 2024
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "AMG CLS 53 4MATIC+",
+                "car_body": "coupe-sedan",
+                "engine": "3.0L Inline-6 Turbo",
+                "fuel": "petrol",
+                "price": "84000$ - 94000$",
+                "year": 2024
+              },
+              {
+                "brand": "Mercedes-Benz",
+                "model": "AMG CLS 63 S 4MATIC+",
+                "car_body": "coupe-sedan",
+                "engine": "4.0L V8 Biturbo",
+                "fuel": "petrol",
+                "price": "99000$ - 119000$",
+                "year": 2024
+              }
+            ]
+    
+}

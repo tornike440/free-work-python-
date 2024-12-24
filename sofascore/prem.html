@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sofascore/css/prem.css">
+    <title>premier league</title>
+</head>
+<body>
+    <a href="/sofascore/home.html"><button>back</button></a>
+    <h1>premier league</h1>
+    <br>
+    <img src="data:image/png;base64,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" alt="">
+    <p>Welcome to the Premier League!
+        <br>
+        <br>
+
+        Get ready to dive into the most exciting football league in the world! Here at TKBRscore, you'll find everything you need to stay up-to-date with all the action.
+        <br>
+        <br>
+        From live scores and match statistics to player profiles and team news, we've got it all. You can follow your favorite teams, check out the latest standings, and relive classic moments.
+        <br>
+        <br>
+        So, whether you're a die-hard fan or just getting into the game, TKBRscore is your go-to source for all things Premier League.</p>
+
+        <h1>standings</h1>
+        <br>
+        <p1><b>played-----won-----drawed---lost--------GD-------points</b></p1>
+        <br>
+
+        <p2>
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nGfV05dipbAc7zzojivKew_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/liverpool.html">liverpool</a>
+            -----------------------------------------------------------------
+            <b>14</b>------------
+            <b>11</b>------------
+            <b>2</b>------------
+            <b>1</b>------------
+            <b>18</b>-------------
+            <b>35</b>
+
+            <br>
+
+
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/fhBITrIlbQxhVB6IjxUO6Q_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/chelsea.html">chelsea</a>
+            -------------------------------------------------------------------
+            <b>14</b>-------------
+            <b>8</b>------------
+            <b>4</b>------------
+            <b>2</b>------------
+            <b>16</b>--------------
+            <b>28</b>
+
+
+
+
+            <br>
+            
+            
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/4us2nCgl6kgZc0t3hpW75Q_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/arsenal.html">arsenal</a>
+            -------------------------------------------------------------------
+            <b>14</b>-------------
+            <b>8</b>------------
+            <b>4</b>------------
+            <b>2</b>------------
+            <b>14</b>--------------
+            <b>28</b>
+
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/z44l-a0W1v5FmgPnemV6Xw_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/mancity.html">manchester city</a>
+            ---------------------------------------------------------
+            <b>14</b>-------------
+            <b>8</b>------------
+            <b>2</b>------------
+            <b>4</b>------------
+            <b>6</b>---------------
+            <b>26</b>
+
+
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/EKIe0e-ZIphOcfQAwsuEEQ_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/brigton.html">brighton</a>
+            ------------------------------------------------------------------
+            <b>14</b>-------------
+            <b>6</b>------------
+            <b>5</b>------------
+            <b>2</b>------------
+            <b>5</b>---------------
+            <b>23</b>
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/Zr6FbE-8pDH7UBpWCO8U9A_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/notforest.html">nothingham forest</a>
+            ------------------------------------------------------
+            <b>14</b>-------------
+            <b>6</b>------------
+            <b>4</b>------------
+            <b>4</b>------------
+            <b>0</b>---------------
+            <b>22</b>
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/uyNNelfnFvCEnsLrUL-j2Q_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/astonvilla.html">aston villa</a>
+            ----------------------------------------------------------------
+            <b>14</b>-------------
+            <b>6</b>------------
+            <b>4</b>------------
+            <b>4</b>-----------
+            <b>-1</b>---------------
+            <b>22</b>
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/k3Q_mKE98Dnohrcea0JFgQ_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/tottenham.html">tottenham</a>
+            ----------------------------------------------------------------
+            <b>13</b>-------------
+            <b>6</b>------------
+            <b>2</b>-------------
+            <b>5</b>----------
+            <b>14</b>---------------
+            <b>20</b>
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/QOUce0WQBYqnkSmN6_TxGA_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/brentford.html">brentford</a>
+            ------------------------------------------------------------------
+            <b>14</b>------------
+            <b>6</b>------------
+            <b>2</b>------------
+            <b>6</b>------------
+            <b>1</b>---------------
+            <b>20</b>
+
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/96CcNNQ0AYDAbssP0V9LuQ_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/newcastle.html">newcastle</a>
+            -----------------------------------------------------------------
+            <b>14</b>------------
+            <b>5</b>------------
+            <b>5</b>------------
+            <b>4</b>------------
+            <b>0</b>---------------
+            <b>20</b>
+
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/udQ6ns69PctCv143h-GeYw_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/manu.html">manchester u</a>
+            -------------------------------------------------------------
+            <b>14</b>------------
+            <b>5</b>------------
+            <b>4</b>------------
+            <b>5</b>------------
+            <b>2</b>---------------
+            <b>20</b>
+
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/Gh7_5p3n364p4vxeM8FhNg_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/fulham.html">fulham</a>
+            --------------------------------------------------------------------
+            <b>13</b>------------
+            <b>5</b>------------
+            <b>4</b>------------
+            <b>4</b>------------
+            <b>0</b>---------------
+            <b>19</b>
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/IcOt-hrK04B-RlRwI3R0yA_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/bournemouth.html">bournemouth</a>
+            ------------------------------------------------------------
+            <b>13</b>------------
+            <b>5</b>------------
+            <b>3</b>------------
+            <b>5</b>------------
+            <b>1</b>--------------
+            <b>18</b>
+
+
+            <br>
+
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/bXkiyIzsbDip3x2FFcUU3A_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/westham.html">west ham</a>
+            -----------------------------------------------------------------
+            <b>14</b>------------
+            <b>4</b>------------
+            <b>3</b>------------
+            <b>7</b>------------
+            <b>-9</b>--------------
+            <b>15</b>
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/C3J47ea36cMBc4XPbp9aaA_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/everton.html">everton</a>
+            --------------------------------------------------------------------
+            <b>14</b>------------
+            <b>3</b>------------
+            <b>5</b>------------
+            <b>6</b>------------
+            <b>-7</b>--------------
+            <b>14</b>
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/UDYY4FSlty6fXFBzvFfcyw_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/leicest.html">leicester</a>
+            -------------------------------------------------------------------
+            <b>14</b>------------
+            <b>3</b>------------
+            <b>4</b>------------
+            <b>7</b>------------
+            <b>-9</b>--------------
+            <b>13</b>
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/8piQOzndGmApKYTcvyN9vA_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/crystalpal.html">crystal palace</a>
+            -------------------------------------------------------------
+            <b>14</b>------------
+            <b>2</b>------------
+            <b>6</b>------------
+            <b>6</b>------------
+            <b>-6</b>--------------
+            <b>12</b>
+
+
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/56vquJBk5U16Dng7txLXCw_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/ipswitch.html">ipswich</a>
+            --------------------------------------------------------------------
+            <b>14</b>------------
+            <b>1</b>------------
+            <b>6</b>------------
+            <b>7</b>------------
+            <b>-12</b>--------------
+            <b>9</b>
+
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/-WjHLbBIQO9xE2e2MW3OPQ_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/wolves.html">wolves</a>
+            ---------------------------------------------------------------------
+            <b>14</b>------------
+            <b>2</b>------------
+            <b>3</b>------------
+            <b>9</b>------------
+            <b>-14</b>--------------
+            <b>9</b>
+
+
+
+
+
+            <br>
+
+
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/y1V4sm2SEBiWUPRIYl5rfg_48x48.png"
+            height="20"
+            width="20"
+            alt="">
+            <a href="/sofascore/prem teams/southhampton.html">southhampton</a>
+            -------------------------------------------------------------
+            <b>14</b>------------
+            <b>2</b>------------
+            <b>3</b>------------
+            <b>9</b>------------
+            <b>-14</b>--------------
+            <b>9</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+            
+
+
+
+        </p2>
+
+        <p>
+            we understand that our site is new and try to improve it!!
+            <br>
+            till then you can use premier leagues site down here
+        </p>
+
+        <a href="https://www.premierleague.com/"><button>click here for official premier league site</button></a>
+
+
+</body>
+</html>
