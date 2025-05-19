@@ -95,7 +95,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  emailjs.init("Zgef7WytC5eIgIUN0"); // Replace with your EmailJS public key
+  emailjs.init("Zgef7WytC5eIgIUN0"); 
 
   const form = document.getElementById('payment-form');
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -120,7 +120,7 @@
       cost_total: total.toFixed(2)
     };
 
-    emailjs.send("service_r936b56", "template-msmined", templateParams)
+    emailjs.send("service_r936b56", "template_msmined", templateParams)
       .then(function (response) {
         alert("Order confirmed! Check your inbox.");
         localStorage.removeItem('cart'); // Clear cart
