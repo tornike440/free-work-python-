@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      padding: 2rem;
+    }
+    .cart-container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 1rem;
+    }
+    .cart-item img {
+      width: 100px;
+      margin-right: 1rem;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: right;
+      margin-top: 2rem;
+    }
+        body {
+      margin: 0;
+      font-family: fantasy;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.9rem;
+    }
+
+    .topbar div {
+      margin-left: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar div:hover {
+      text-decoration: underline;
+    }
+
+    .topbar img {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .logo a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      position: relative;
+    }
+
+    nav ul li:hover {
+      color: #555;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .right-icons div {
+      cursor: pointer;
+    }
+
+    .right-icons div:hover {
+      opacity: 0.7;
+    }
+
+    /* Dropdown */
+    .shop-item {
+      position: relative;
+    }
+
+    .shop-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #1a1a1a;
+      padding: 10px 0;
+      border-radius: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .shop-dropdown ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .shop-dropdown li {
+      padding: 10px 20px;
+      color: #ccc;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .shop-dropdown li:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .shop-item:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .addcart {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+    display: block;
+    margin-left: auto; 
+    }
+
+    .addcart:hover {
+      transform: scale(1.1);
+    }
+
+        .delete-btn {
+    background: none;
+    color: red;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    }
+
+    .delete-btn:hover {
+    color: #ff4d4d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #ccc;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+
+  </style>
+</head>
+<body>
+
+    <div class="topbar">
+    <div>
+      <img src="/gwwwww/georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
+      Georgia (CAD $)
+    </div>
+    <div>English</div>
+  </div>
+
+  <header>
+    <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+    <nav>
+      <ul>
+        <li class="shop-item">
+          Shop ▼
+          <div class="shop-dropdown">
+            <ul>
+              <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
+              <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
+              <li><a href="/gwwwww/zip.html">zip-ups</a></li>
+              <li>Outerwear</li>
+              <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>Track Your Order</li>
+        <li>Size Help</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <div class="right-icons">
+      <div>CAD</div>
+      <div>🔍</div>
+      <div><a href="/gwwwww/cart.html">🛒</a></div>
+    </div>
+  </header>
+  <div class="cart-container">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div class="total" id="cart-total"></div>
+
+    <button class="addcart">order now</button>
+  </div>
+
+
+
+
+
+
+    <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
+
+        cart.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+
+        itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-info">
+            <h2>${item.name}</h2>
+            <p>$${item.price.toFixed(2)}</p>
+            </div>
+            <button class="delete-btn" data-index="${index}">✖</button>
+        `;
+
+        cartItemsContainer.appendChild(itemDiv);
+        total += item.price;
+        });
+
+        cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+        // Add delete functionality
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const index = this.getAttribute('data-index');
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart(); // Re-render the cart after deletion
+        });
+        });
+    }
+
+    renderCart();
+    </script>
+
+
+
+
+
+    <footer>
+        <p>&copy; 2025 TKBR. All rights reserved.</p>
+    </footer>
+</body>
+</html>

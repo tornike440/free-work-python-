@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - TKBR</title>
+  <style>
+    /* === Global Styles === */
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: fantasy;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* === Top Bar === */
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.9rem;
+    }
+
+    .topbar div {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+
+    .topbar div:hover {
+      text-decoration: underline;
+    }
+
+    /* === Header === */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      position: relative;
+    }
+
+    nav ul li:hover {
+      color: #bbb;
+    }
+
+    .shop-dropdown {
+      opacity: 0;
+      position: absolute;
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .shop-item:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .shop-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .right-icons div {
+      cursor: pointer;
+    }
+
+    .right-icons div:hover {
+      opacity: 0.7;
+    }
+
+    /* === Contact Section === */
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .contact-container input[type="checkbox"] {
+      width: auto;
+    }
+
+    .contact-container label {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .contact-container button {
+      background-color: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .contact-container button:hover {
+      background-color: #ddd;
+    }
+
+    .sidebar {
+      margin-top: 40px;
+    }
+
+    .sidebar p {
+      margin: 8px 0;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div>
+      <img src="/gwwwww/georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
+      Georgia (CAD $)
+    </div>
+    <div>English</div>
+  </div>
+
+  <!-- Header with Nav -->
+  <header>
+    <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+    <nav>
+      <ul>
+        <li class="shop-item">
+          Shop ▼
+          <div class="shop-dropdown">
+            <ul>
+              <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
+              <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
+              <li><a href="/gwwwww/zip.html">zip-ups</a></li>
+              <li>Outerwear</li>
+              <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>Track Your Order</li>
+        <li>Size Help</li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="right-icons">
+      <div>CAD</div>
+      <div>🔍</div>
+      <div><a href="/gwwwww/cart.html">🛒</a></div>
+    </div>
+  </header>
+
+  <!-- Contact Form -->
+  <div class="contact-container" style="display: flex; flex-direction: row;">
+    <div>
+        <h1>Contact Us</h1>
+        <p>If you’ve got great products you're making or looking to work with us, then drop us a line.</p>
+
+        <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" rows="5" required></textarea>
+
+        <label>
+            <input type="checkbox"> Save my name, email, and website in this browser for next time
+        </label>
+
+        <br>
+        <button type="submit">Submit Now</button>
+        </form>
+    </div>
+
+    <div class="sidebar" style="margin: 30px;">
+      <p><strong>Email:</strong> TKBR@gmail.com</p>
+      <p><strong>We're Open:</strong> 24/7 For You</p>
+      <p><strong>Socials:</strong> 📌 📘 📸</p>
+    </div>
+</div>
+
+  <footer>© 2025 TKBR. All rights reserved.</footer>
+
+</body>
+</html>
