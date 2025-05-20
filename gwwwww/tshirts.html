@@ -5,92 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TKBR</title>
   <style>
-  body {
-    margin: 0;
-    font-family: fantasy;
-    background-color: #111;
-    color: #f0f0f0;
-  }
+      body {
+        margin: 0;
+        font-family: fantasy;
+        background-color: #121212;
+        color: #ffffff;
+      }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-  .topbar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #444;
-    font-size: 0.9rem;
-    background-color: #222;
-  }
+      .topbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #333;
+        font-size: 0.9rem;
+        background-color: #1e1e1e;
+      }
 
-  .topbar div:hover {
-    text-decoration: underline;
-  }
+      .topbar div {
+        margin-left: 1rem;
+        cursor: pointer;
+      }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #222;
-  }
+      .topbar div:hover {
+        text-decoration: underline;
+      }
 
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-  }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #1e1e1e;
+      }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+      }
 
-  nav ul li:hover {
-    color: #ccc;
-  }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
 
-  .shop-dropdown {
-    opacity: 0;
-    position: absolute;
-    background-color: #111;
-    border: 1px solid #444;
-    padding: 1rem;
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
+      nav ul li {
+        cursor: pointer;
+        position: relative;
+      }
 
-  .shop-item:hover .shop-dropdown {
-    opacity: 1;
-    pointer-events: auto;
-  }
+      nav ul li:hover {
+        color: #aaa;
+      }
 
-  .shop-dropdown ul li:hover {
-    color: #ccc;
-  }
+      .shop-dropdown {
+        opacity: 0;
+        position: absolute;
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        padding: 1rem;
+        z-index: 1000;
+        transition: opacity 1s ease;
+        pointer-events: none;
+        color: #fff;
+      }
 
-  .right-icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+      .shop-item:hover .shop-dropdown {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      /* shecvlili racari */
+      .shop-item {
+        position: relative;
+        z-index: 1;
+      }
 
-  .right-icons div:hover {
-    opacity: 0.7;
-  }
+      #dropdown-list li::after {
+        position: absolute;
+        content: " ";
+        width: 0%;
+        height: 2px;
+        background: #ffffff;
+        display: block;
+        cursor: pointer;
+        transition: 1s;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      #dropdown-list li:hover::after {
+        width: 100%;
+        .shop-item {
+          color: black;
+        }
+      }
 
-  .hero {
-    text-align: center;
-    padding: 2rem;
-    background-color: #eee;
-    color: #111;
-  }
+      .shop-item::after {
+        content: " ";
+        width: 0%;
+        height: 2px;
+        background: #ddded9;
+        display: block;
+        cursor: pointer;
+        transition: 1.3s;
+        margin-top: 3px;
+      }
+
+      .shop-item:hover::after {
+        width: 100%;
+      }
+      /* shecvlili racari */
+
+      .shop-dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .right-icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .right-icons div {
+        cursor: pointer;
+      }
+
+      .right-icons div:hover {
+        opacity: 0.7;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 2rem;
+        background-color: #1a1a1a;
+      }
 
   .products {
     display: flex;
@@ -156,6 +217,18 @@
     background-color: #444;
     margin: 10px;
   }
+
+  .price {
+    font-size: 15px;
+    color: #ff5252;
+  }
+
+  .original-price {
+    margin-left: 10px;
+    color: #888;
+    text-decoration: line-through;
+  }
+
 </style>
 </head>
 <body>
@@ -168,33 +241,33 @@
     <div>English</div>
   </div>
 
-  <header>
-    <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
-    <nav>
-      <ul>
-        <li class="shop-item">
-          Shop ▼
-          <div class="shop-dropdown">
-            <ul>
-              <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-              <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-              <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-              <li>Outerwear</li>
-              <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
-            </ul>
-          </div>
-        </li>
-        <li>Track Your Order</li>
-        <li>Size Help</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <div class="right-icons">
-      <div>CAD</div>
-      <div>🔍</div>
-      <div><a href="/gwwwww/cart.html">🛒</a></div>
-    </div>
-  </header>
+    <header>
+      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <nav>
+        <ul>
+          <li class="shop-item">
+            <span>Shop ▼</span>
+            <div class="shop-dropdown">
+              <ul id="dropdown-list">
+                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
+                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
+                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
+                <li>Outerwear</li>
+                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="shop-item">Track Your Order</li>
+          <li class="shop-item">Size Help</li>
+          <li><a href="/gwwwww/contact.html" class="shop-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="right-icons">
+        <div>CAD</div>
+        <div>🔍</div>
+        <div><a href="/gwwwww/cart.html">🛒</a></div>
+      </div>
+    </header>
 
   <section class="hero" style="background-color: #000; color: rgb(205, 205, 205);">
     <h3><a href="/gwwwww/hw.html">home</a> > <a href="/gwwwww/tshirts.html">T-shirts</a></h3>
@@ -261,8 +334,11 @@
     <div class="product">
         <img src="/gwwwww/tshirt10.png" alt="Product 10"/>
         <h2>Kobe Tee</h2>
-        <p>$34.99</p>
-        <button class="addcart" onclick="addToCart('Kobe Tee', 34.99, '/gwwwww/tshirt10.png')">Add to Cart</button>
+      <div>
+        <span class="price">$79.00</span>
+        <span class="original-price">$134.99</span>
+      </div>
+        <button class="addcart" onclick="addToCart('Kobe Tee', 79.99, '/gwwwww/tshirt10.png')">Add to Cart</button>
     </div>
 
     
@@ -270,7 +346,8 @@
         <img src="/gwwwww/tshirt11.png" alt="Product 11"/>
         <h2>Narcissist (white) Tee</h2>
         <p>$34.99</p>
-        <button class="addcart" onclick="addToCart('Narcissist (white) Tee', 34.99, '/gwwwww/tshirt11.png')">Add to Cart</button>
+        <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
+        <p style="color: red;">Out of Stock</p>
     </div>
     <div class="product">
         <img src="/gwwwww/tshirt12.png" alt="Product 12"/>
@@ -281,14 +358,18 @@
     <div class="product">
         <img src="/gwwwww/tshirt13.png" alt="Product 13"/>
         <h2>Washed Athletic Tee</h2>
-        <p>$34.99</p>
-        <button class="addcart" onclick="addToCart('Washed Athletic Tee', 34.99, '/gwwwww/tshirt13.png')">Add to Cart</button>
+      <div>
+        <span class="price">$19.00</span>
+        <span class="original-price">$34.99</span>
+      </div>
+        <button class="addcart" onclick="addToCart('Washed Athletic Tee', 19.99, '/gwwwww/tshirt13.png')">Add to Cart</button>
     </div>
     <div class="product">
         <img src="/gwwwww/tshirt14.png" alt="Product 14"/>
         <h2>Forever Tee</h2>
         <p>$34.99</p>
-        <button class="addcart" onclick="addToCart('Forever Tee', 34.99, '/gwwwww/tshirt14.png')">Add to Cart</button>
+        <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
+        <p style="color: red;">Out of Stock</p>
     </div>
     <div class="product">
         <img src="/gwwwww/tshirt15.png" alt="Product 15"/>
@@ -301,8 +382,11 @@
     <div class="product">
         <img src="/gwwwww/tshirt16.png" alt="Product 16"/>
         <h2>Anime Tee</h2>
-        <p>$34.99</p>
-        <button class="addcart" onclick="addToCart('Anime Tee', 34.99, '/gwwwww/tshirt16.png')">Add to Cart</button>
+      <div>
+        <span class="price">$19.00</span>
+        <span class="original-price">$34.99</span>
+      </div>
+        <button class="addcart" onclick="addToCart('Anime Tee', 19.99, '/gwwwww/tshirt16.png')">Add to Cart</button>
     </div>
     <div class="product">
         <img src="/gwwwww/tshirt17.png" alt="Product 17"/>
@@ -326,7 +410,8 @@
         <img src="/gwwwww/tshirt20.png" alt="Product 20"/>
         <h2>Track Beast Tee</h2>
         <p>$34.99</p>
-        <button class="addcart" onclick="addToCart('Track Beast Tee', 34.99, '/gwwwww/tshirt20.png')">Add to Cart</button>
+        <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
+        <p style="color: red;">Out of Stock</p>
     </div>
     </section>
 

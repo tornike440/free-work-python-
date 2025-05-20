@@ -5,86 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TKBR</title>
  <style>
-  body {
-    margin: 0;
-    font-family: fantasy;
-    background-color: #111;
-    color: #f0f0f0;
-  }
+body {
+  margin: 0;
+  font-family: fantasy;
+  background-color: #121212;
+  color: #ffffff;
+}
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  .topbar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #444;
-    font-size: 0.9rem;
-    background-color: #222;
-  }
+/* ========== Top Bar ========== */
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #333;
+  font-size: 0.9rem;
+  background-color: #1e1e1e;
+}
 
-  .topbar div:hover {
-    text-decoration: underline;
-  }
+.topbar div {
+  margin-left: 1rem;
+  cursor: pointer;
+}
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #222;
-  }
+.topbar div:hover {
+  text-decoration: underline;
+}
 
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-  }
+/* ========== Header ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1e1e1e;
+}
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
 
-  nav ul li:hover {
-    color: #ccc;
-  }
+/* ========== Navigation ========== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
 
-  .shop-dropdown {
-    opacity: 0;
-    position: absolute;
-    background-color: #111;
-    border: 1px solid #444;
-    padding: 1rem;
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
+nav ul li {
+  cursor: pointer;
+  position: relative;
+}
 
-  .shop-item:hover .shop-dropdown {
-    opacity: 1;
-    pointer-events: auto;
-  }
+nav ul li:hover {
+  color: #aaa;
+}
 
-  .shop-dropdown ul li:hover {
-    color: #ccc;
-  }
+/* Shop Item Hover Effect */
+.shop-item {
+  position: relative;
+  z-index: 1;
+}
 
-  .right-icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+.shop-item::after {
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background: #ddded9;
+  display: block;
+  cursor: pointer;
+  transition: width 1.3s;
+  margin-top: 3px;
+}
 
-  .right-icons div:hover {
-    opacity: 0.7;
-  }
+.shop-item:hover::after {
+  width: 100%;
+}
 
+/* ========== Dropdown ========== */
+.shop-dropdown {
+  opacity: 0;
+  position: absolute;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 1rem;
+  z-index: 1000;
+  transition: opacity 1s ease;
+  pointer-events: none;
+  color: #fff;
+}
+
+.shop-item:hover .shop-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.shop-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Dropdown Item Hover Background (Modified) */
+#dropdown-list li {
+  position: relative;
+}
+
+#dropdown-list li::after {
+  content: " ";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  display: block;
+  transition: width 1s;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#dropdown-list li:hover::after {
+  width: 100%;
+}
+
+/* ========== Icons ========== */
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.right-icons div {
+  cursor: pointer;
+}
+
+.right-icons div:hover {
+  opacity: 0.7;
+}
   .hero {
     text-align: center;
     padding: 2rem;
@@ -167,35 +234,33 @@
     </div>
     <div>English</div>
   </div>
-
-  <header>
-    <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
-    <nav>
-      <ul>
-        <li class="shop-item">
-          Shop ▼
-          <div class="shop-dropdown">
-            <ul>
-              <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-              <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-              <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-              <li>Outerwear</li>
-              <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
-            </ul>
-          </div>
-        </li>
-        <li>Track Your Order</li>
-        <li>Size Help</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <div class="right-icons">
-      <div>CAD</div>
-      <div>🔍</div>
-      <div><a href="/gwwwww/cart.html">🛒</a></div>
-    </div>
-  </header>
-
+    <header>
+      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <nav>
+        <ul>
+          <li class="shop-item">
+            <span>Shop ▼</span>
+            <div class="shop-dropdown">
+              <ul id="dropdown-list">
+                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
+                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
+                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
+                <li>Outerwear</li>
+                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="shop-item">Track Your Order</li>
+          <li class="shop-item">Size Help</li>
+          <li><a href="/gwwwww/contact.html" class="shop-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="right-icons">
+        <div>CAD</div>
+        <div>🔍</div>
+        <div><a href="/gwwwww/cart.html">🛒</a></div>
+      </div>
+    </header>
   <section class="hero" style="background-color: #000; color: rgb(205, 205, 205);">
     <h3><a href="/gwwwww/hw.html">home</a> > <a href="/gwwwww/tshirts.html">Bottoms</a></h3>
     <h1>BOTTOMS</h1>

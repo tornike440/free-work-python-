@@ -5,108 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Savoy West Product Page</title>
   <style>
-    body {
-      margin: 0;
-      font-family: fantasy;
-      background-color: #121212;
-      color: #f5f5f5;
-    }
+body {
+  margin: 0;
+  font-family: fantasy;
+  background-color: #121212;
+  color: #ffffff;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .topbar {
-      display: flex;
-      justify-content: flex-end;
-      padding: 0.5rem 1rem;
-      border-bottom: 1px solid #333;
-      font-size: 0.9rem;
-      background-color: #1e1e1e;
-    }
+/* ========== Top Bar ========== */
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #333;
+  font-size: 0.9rem;
+  background-color: #1e1e1e;
+}
 
-    .topbar div {
-      margin-left: 1rem;
-      cursor: pointer;
-    }
+.topbar div {
+  margin-left: 1rem;
+  cursor: pointer;
+}
 
-    .topbar div:hover {
-      text-decoration: underline;
-    }
+.topbar div:hover {
+  text-decoration: underline;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #1a1a1a;
-    }
+/* ========== Header ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1e1e1e;
+}
 
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
+/* ========== Navigation ========== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
 
-    nav ul li {
-      cursor: pointer;
-      position: relative;
-    }
+nav ul li {
+  cursor: pointer;
+  position: relative;
+}
 
-    nav ul li:hover {
-      color: #bbb;
-    }
+nav ul li:hover {
+  color: #aaa;
+}
 
-    .shop-dropdown {
-      opacity: 0;
-      position: absolute;
-      background-color: #222;
-      border: 1px solid #444;
-      padding: 1rem;
-      z-index: 1000;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
+/* Shop Item Hover Effect */
+.shop-item {
+  position: relative;
+  z-index: 1;
+}
 
-    .shop-item:hover .shop-dropdown {
-      opacity: 1;
-      pointer-events: auto;
-    }
+.shop-item::after {
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background: #ddded9;
+  display: block;
+  cursor: pointer;
+  transition: width 1.3s;
+  margin-top: 3px;
+}
 
-    .shop-dropdown ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+.shop-item:hover::after {
+  width: 100%;
+}
 
-    .shop-dropdown a {
-      color: #f5f5f5;
-    }
+/* ========== Dropdown ========== */
+.shop-dropdown {
+  opacity: 0;
+  position: absolute;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 1rem;
+  z-index: 1000;
+  transition: opacity 1s ease;
+  pointer-events: none;
+  color: #fff;
+}
 
-    .right-icons {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+.shop-item:hover .shop-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    .right-icons div {
-      cursor: pointer;
-    }
+.shop-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-    .right-icons div:hover {
-      opacity: 0.7;
-    }
+/* Dropdown Item Hover Background (Modified) */
+#dropdown-list li {
+  position: relative;
+}
+
+#dropdown-list li::after {
+  content: " ";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  display: block;
+  transition: width 1s;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#dropdown-list li:hover::after {
+  width: 100%;
+}
+
+/* ========== Icons ========== */
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.right-icons div {
+  cursor: pointer;
+}
+
+.right-icons div:hover {
+  opacity: 0.7;
+}
 
     /* Product Page */
     .product-page {
@@ -213,34 +258,33 @@
     </div>
     <div>English ▼</div>
   </div>
-
-  <header>
-    <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
-    <nav>
-      <ul>
-        <li class="shop-item">
-          Shop ▼
-          <div class="shop-dropdown">
-            <ul>
-              <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-              <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-              <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-              <li>Outerwear</li>
-              <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
-            </ul>
-          </div>
-        </li>
-        <li>Track Your Order</li>
-        <li>Size Help</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <div class="right-icons">
-      <div>CAD </div>
-      <div>🔍</div>
-      <div><a href="/gwwwww/cart.html">🛒</a></div>
-    </div>
-  </header>
+    <header>
+      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <nav>
+        <ul>
+          <li class="shop-item">
+            <span>Shop ▼</span>
+            <div class="shop-dropdown">
+              <ul id="dropdown-list">
+                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
+                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
+                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
+                <li>Outerwear</li>
+                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="shop-item">Track Your Order</li>
+          <li class="shop-item">Size Help</li>
+          <li><a href="/gwwwww/contact.html" class="shop-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="right-icons">
+        <div>CAD</div>
+        <div>🔍</div>
+        <div><a href="/gwwwww/cart.html">🛒</a></div>
+      </div>
+    </header>
 
   <div class="product-page">
     <div class="thumbnails">

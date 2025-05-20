@@ -40,39 +40,39 @@
       font-family: fantasy;
     }
 
-    /* Topbar */
+
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ========== Top Bar ========== */
     .topbar {
       display: flex;
       justify-content: flex-end;
       padding: 0.5rem 1rem;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #333;
       font-size: 0.9rem;
+      background-color: #1e1e1e;
     }
 
     .topbar div {
       margin-left: 1rem;
       cursor: pointer;
-      display: flex;
-      align-items: center;
     }
 
     .topbar div:hover {
       text-decoration: underline;
     }
 
-    .topbar img {
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      margin-right: 5px;
-    }
-
-    /* Header */
+    /* ========== Header ========== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
+      background-color: #1e1e1e;
     }
 
     .logo {
@@ -80,14 +80,10 @@
       font-weight: bold;
     }
 
-    .logo a {
-      color: inherit;
-      text-decoration: none;
-    }
-
+    /* ========== Navigation ========== */
     nav ul {
-      display: flex;
       list-style: none;
+      display: flex;
       gap: 2rem;
       margin: 0;
       padding: 0;
@@ -99,9 +95,80 @@
     }
 
     nav ul li:hover {
-      color: #555;
+      color: #aaa;
     }
 
+    /* Shop Item Hover Effect */
+    .shop-item {
+      position: relative;
+      z-index: 1;
+    }
+
+    .shop-item::after {
+      content: " ";
+      width: 0%;
+      height: 2px;
+      background: #ddded9;
+      display: block;
+      cursor: pointer;
+      transition: width 1.3s;
+      margin-top: 3px;
+    }
+
+    .shop-item:hover::after {
+      width: 100%;
+    }
+
+    /* ========== Dropdown ========== */
+    .shop-dropdown {
+      opacity: 0;
+      position: absolute;
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      padding: 1rem;
+      z-index: 1000;
+      transition: opacity 1s ease;
+      pointer-events: none;
+      color: #fff;
+    }
+
+    .shop-item:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .shop-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    /* Dropdown Item Hover Background (Modified) */
+    #dropdown-list li {
+      position: relative;
+    }
+
+    #dropdown-list li::after {
+      content: " ";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: #ffffff;
+      display: block;
+      transition: width 1s;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    #dropdown-list li:hover::after {
+      width: 100%;
+    }
+
+    /* ========== Icons ========== */
     .right-icons {
       display: flex;
       align-items: center;
@@ -114,47 +181,6 @@
 
     .right-icons div:hover {
       opacity: 0.7;
-    }
-
-    /* Dropdown */
-    .shop-item {
-      position: relative;
-    }
-
-    .shop-dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #1a1a1a;
-      padding: 10px 0;
-      border-radius: 6px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 1000;
-    }
-
-    .shop-dropdown ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .shop-dropdown li {
-      padding: 10px 20px;
-      color: #ccc;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .shop-dropdown li:hover {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .shop-item:hover .shop-dropdown {
-      opacity: 1;
-      pointer-events: auto;
     }
 
     .addcart {
