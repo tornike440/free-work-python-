@@ -1,157 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TKBR</title>
-  <style>
-body {
-  margin: 0;
-  font-family: fantasy;
-  background-color: #121212;
-  color: #ffffff;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKBR</title>
+    <style>
+     body {
+      margin: 0;
+      font-family: fantasy;
+      background-color: #fdfdfd;
+      color: #222;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* ========== Top Bar ========== */
-.topbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #333;
-  font-size: 0.9rem;
-  background-color: #1e1e1e;
-}
+    /* ========== Top Bar ========== */
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ccc;
+      font-size: 0.9rem;
+      background-color: #eee;
+    }
 
-.topbar div {
-  margin-left: 1rem;
-  cursor: pointer;
-}
+    .topbar div {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
 
-.topbar div:hover {
-  text-decoration: underline;
-}
+    .topbar div:hover {
+      text-decoration: underline;
+    }
 
-/* ========== Header ========== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #1e1e1e;
-}
+    /* ========== Header ========== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fafafa;
+    }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-}
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
 
-/* ========== Navigation ========== */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
+    /* ========== Navigation ========== */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul li {
-  cursor: pointer;
-  position: relative;
-}
+    nav ul li {
+      cursor: pointer;
+      position: relative;
+    }
 
-nav ul li:hover {
-  color: #aaa;
-}
+    nav ul li:hover {
+      color: #000;
+    }
 
-/* Shop Item Hover Effect */
-.shop-item {
-  position: relative;
-  z-index: 1;
-}
+    /* Shop Item Hover Effect */
+    .shop-item {
+      position: relative;
+      z-index: 1;
+    }
 
-.shop-item::after {
-  content: " ";
-  width: 0%;
-  height: 2px;
-  background: #ddded9;
-  display: block;
-  cursor: pointer;
-  transition: width 1.3s;
-  margin-top: 3px;
-}
+    .shop-item::after {
+      content: " ";
+      width: 0%;
+      height: 2px;
+      background: #333;
+      display: block;
+      cursor: pointer;
+      transition: width 1.3s;
+      margin-top: 3px;
+    }
 
-.shop-item:hover::after {
-  width: 100%;
-}
+    .shop-item:hover::after {
+      width: 100%;
+    }
 
-/* ========== Dropdown ========== */
-.shop-dropdown {
-  opacity: 0;
-  position: absolute;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  padding: 1rem;
-  z-index: 1000;
-  transition: opacity 1s ease;
-  pointer-events: none;
-  color: #fff;
-}
+    /* ========== Dropdown ========== */
+    .shop-dropdown {
+      opacity: 0;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      z-index: 1000;
+      transition: opacity 1s ease;
+      pointer-events: none;
+      color: #222;
+    }
 
-.shop-item:hover .shop-dropdown {
-  opacity: 1;
-  pointer-events: auto;
-}
+    .shop-item:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-.shop-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+    .shop-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-/* Dropdown Item Hover Background (Modified) */
-#dropdown-list li {
-  position: relative;
-}
+    /* Dropdown Item Hover Background (Modified) */
+    #dropdown-list li {
+      position: relative;
+    }
 
-#dropdown-list li::after {
-  content: " ";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  background: #ffffff;
-  display: block;
-  transition: width 1s;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+    #dropdown-list li::after {
+      content: " ";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: #000;
+      color: #fff;
+      display: block;
+      transition: width 1s;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
 
-#dropdown-list li:hover::after {
-  width: 100%;
-}
+    #dropdown-list li:hover::after {
+      width: 100%;
+      color: #fff;
+    }
 
-/* ========== Icons ========== */
-.right-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+    /* ========== Icons ========== */
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-.right-icons div {
-  cursor: pointer;
-}
+    .right-icons div {
+      cursor: pointer;
+    }
 
-.right-icons div:hover {
-  opacity: 0.7;
-}
+    .right-icons div:hover {
+      opacity: 0.7;
+    }
+
     .hero {
       text-align: center;
       padding: 2rem;
@@ -167,10 +170,10 @@ nav ul li:hover {
     }
 
     .product {
-      flex: 1 1 calc(50% - 2rem);
+      flex: 1 1 calc(33% - 2rem);
       box-sizing: border-box;
-      border: 1px solid #444;
-      background-color: #1a1a1a;
+      border: 1px solid #ccc;
+      background-color: #fff;
       padding: 1rem;
       text-align: center;
       transition: 0.4s linear;
@@ -179,7 +182,7 @@ nav ul li:hover {
     .product:hover {
       transform: scale(1.05);
       border-color: #888;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .product img {
@@ -190,8 +193,8 @@ nav ul li:hover {
     }
 
     .addcart {
-      background-color: #fff;
-      color: #000;
+      background-color: #000;
+      color: #fff;
       border: none;
       border-radius: 15px;
       padding: 0.5rem 1rem;
@@ -201,7 +204,7 @@ nav ul li:hover {
 
     .addcart:hover {
       transform: scale(1.5);
-      background-color: #ddd;
+      background-color: #222;
     }
 
     .ftpc {
@@ -214,56 +217,171 @@ nav ul li:hover {
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #222;
-      color: #fff;
+      background-color: #f0f0f0;
+      color: #222;
     }
 
     .slicer {
       height: 2px;
-      background-color: #444;
+      background-color: #ccc;
       margin: 10px;
     }
+
+    /* ========== Dark Mode ========== */
+    body.darkmode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    body.darkmode .topbar {
+      background-color: #1e1e1e;
+      border-bottom: 1px solid #333;
+    }
+
+    body.darkmode header {
+      background-color: #1e1e1e;
+    }
+
+    body.darkmode nav ul li:hover {
+      color: #aaa;
+    }
+
+    body.darkmode .shop-item::after {
+      background: #ddded9;
+    }
+
+    body.darkmode .shop-dropdown {
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    body.darkmode #dropdown-list li::after {
+      background: #ffffff;
+    }
+
+    body.darkmode .right-icons div:hover {
+      opacity: 0.7;
+    }
+
+    body.darkmode .hero {
+      background-color: #222;
+      color: #f5f5f5;
+    }
+
+    body.darkmode .product {
+      background-color: #1a1a1a;
+      border: 1px solid #444;
+    }
+
+    body.darkmode .product:hover {
+      border-color: #888;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+    body.darkmode .addcart {
+      background-color: #fff;
+      color: #000;
+    }
+
+    body.darkmode .addcart:hover {
+      background-color: #ddd;
+    }
+
+    body.darkmode footer {
+      background-color: #222;
+      color: #fff;
+    }
+
+    body.darkmode .slicer {
+      background-color: #444;
+    }
+    #theme-toggle {
+      background-color: #0048ff;
+      color: #222;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    #theme-toggle:hover {
+      background-color: #ddd;
+      color: #000;
+    }
+    body.darkmode #theme-toggle {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+    body.darkmode #theme-toggle:hover {
+      background-color: #555;
+      color: #fff;
+    }   
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    body.darkmode button {
+      background-color: #444;
+      color: #fff;
+    }
+    body.darkmode button:hover {
+      background-color: #666;
+    }  
+
+
+
+    </style>
+
   </style>
 </head>
 <body>
 
   <div class="topbar">
     <div>
-      <img src="/gwwwww/georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
+      <img src="georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
       Georgia (CAD $)
     </div>
     <div>English</div>
   </div>
 
     <header>
-      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <div class="logo"><a href="hw.html">TKBR</a></div>
       <nav>
         <ul>
           <li class="shop-item">
             <span>Shop ▼</span>
             <div class="shop-dropdown">
               <ul id="dropdown-list">
-                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-                <li>Outerwear</li>
-                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+                <li><a href="tshirts.html">T-Shirts</a></li>
+                <li><a href="hoodies.html">Hoodies</a></li>
+                <li><a href="zip.html">zip-ups</a></li>
+                <li><a href="Outerwear.html">Outerwear</a></li>
+                <li><a href="bottoms.html">Bottoms</a></li>
               </ul>
             </div>
           </li>
-          <li class="shop-item">Track Your Order</li>
-          <li class="shop-item">Size Help</li>
-          <li><a href="/gwwwww/contact.html" class="shop-item">Contact</a></li>
+          <li class="shop-item">Track Your Order(coming soon)</li>
+          <li class="shop-item">Size Help(coming soon)</li>
+          <li><a href="contact.html" class="shop-item">Contact</a></li>
         </ul>
       </nav>
       <div class="right-icons">
-        <div>CAD</div>
+        <div><button id="theme-toggle">Toggle Dark/white Mode</button></div>
         <div>🔍</div>
-        <div><a href="/gwwwww/cart.html">🛒</a></div>
+        <div><a href="cart.html">🛒</a></div>
       </div>
     </header>
   <section class="hero" style="background-color: #000; color: rgb(205, 205, 205);">
-    <h3><a href="/gwwwww/hw.html">home</a> > <a href="/gwwwww/zip.html">Zip-Ups</a></h3>
+    <h3><a href="hw.html">home</a> > <a href="zip.html">Zip-Ups</a></h3>
     <h1>Zip-Ups</h1>
 
 
@@ -271,43 +389,54 @@ nav ul li:hover {
     <section class="products">
     
     <div class="product">
-        <img src="/gwwwww/zp1.png" alt="Product 1"/>
-        <h2>Blue Washed Zip-Up</h2>
-        <p>$94.99</p>
-        <button class="addcart" onclick="addToCart('Blue Washed Zip-Up', 94.99, '/gwwwww/zp1.png')">Add to Cart</button>
+      <a href="zp1.html">
+          <img src="zp1.png" alt="Product 1"/>
+          <h2>Blue Washed Zip-Up</h2>
+          <p>$94.99</p>
+          <button class="addcart" onclick="addToCart('Blue Washed Zip-Up', 94.99, 'zp1.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="/gwwwww/zp2.png" alt="Product 2"/>
-        <h2>Pink Washed Zip-Up</h2>
-        <p>$94.99</p>
-        <button class="addcart" onclick="addToCart('pink Washed Zip-Up', 94.99, '/gwwwww/zp2.png')">Add to Cart</button>
+      <a href="zp2.html">
+          <img src="zp2.png" alt="Product 2"/>
+          <h2>Pink Washed Zip-Up</h2>
+          <p>$94.99</p>
+          <button class="addcart" onclick="addToCart('pink Washed Zip-Up', 94.99, 'zp2.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="/gwwwww/zp3.png" alt="Product 3"/>
-        <h2>Bllue Zip-Up</h2>
-        <p>$74.99</p>
-        <button class="addcart" onclick="addToCart('Blue Zip-Up', 74.99, '/gwwwww/zp3.png')">Add to Cart</button>
+      <a href="zp3.html">
+          <img src="zp3.png" alt="Product 3"/>
+          <h2>Bllue Zip-Up</h2>
+          <p>$74.99</p>
+          <button class="addcart" onclick="addToCart('Blue Zip-Up', 74.99, 'zp3.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="/gwwwww/zp4.png" alt="Product 4"/>
-        <h2>Grey Printed Zip-Up</h2>
-        <p>$104.99</p>
-        <button class="addcart" onclick="addToCart('“Grey Printed Zip-Up', 104.99, '/gwwwww/zp4.png')">Add to Cart</button>
+      <a href="zp4.html">
+          <img src="zp4.png" alt="Product 4"/>
+          <h2>Grey Printed Zip-Up</h2>
+          <p>$104.99</p>
+          <button class="addcart" onclick="addToCart('“Grey Printed Zip-Up', 104.99, 'zp4.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="/gwwwww/zp5.png" alt="Product 5"/>
-        <h2>Blue Printed Zip-Up</h2>
-        <p>$104.99</p>
-        <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
-        <p style="color: red;">Out of Stock</p>
+      <a href="zp5.html">
+          <img src="zp5.png" alt="Product 5"/>
+          <h2>Blue Printed Zip-Up</h2>
+          <p>$104.99</p>
+          <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
+          <p style="color: red;">Out of Stock</p>
+      </a>
     </div>
 
-    
     <div class="product">
-        <img src="/gwwwww/zp6.png" alt="Product 6"/>
-        <h2>Printed Zip-Up</h2>
-        <p>$124.99</p>
-        <button class="addcart" onclick="addToCart('Printed Zip-Up', 124.99, '/gwwwww/zp6.png')">Add to Cart</button>
+      <a href="zp6.html">
+          <img src="zp6.png" alt="Product 6"/>
+          <h2>Printed Zip-Up</h2>
+          <p>$124.99</p>
+          <button class="addcart" onclick="addToCart('Printed Zip-Up', 124.99, 'zp6.png')">Add to Cart</button>
+      </a>
     </div>
     </section>
 
@@ -319,6 +448,24 @@ nav ul li:hover {
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${name} added to cart!`);
     }
+    const toggleButton = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            // Apply saved theme on load
+            if (localStorage.getItem("theme") === "dark") {
+              body.classList.add("darkmode");
+            }
+
+            toggleButton.addEventListener("click", () => {
+              body.classList.toggle("darkmode");
+
+              // Save preference
+              if (body.classList.contains("darkmode")) {
+                localStorage.setItem("theme", "dark");
+              } else {
+                localStorage.setItem("theme", "light");
+              }
+            });
     </script>
 
         <footer>

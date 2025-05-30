@@ -69,10 +69,29 @@
       color: #ccc;
       margin-top: 2rem;
     }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    body.darkmode button {
+      background-color: #444;
+      color: #fff;
+    }
+    body.darkmode button:hover {
+      background-color: #666;
+    }    
   </style>
 </head>
 <body>
-
+<div style="width:10%; margin-left: 90%; "><button id="theme-toggle">Toggle Dark/white Mode</button></div>
 <div class="container">
   <h1>Payment Details</h1>
   <form id="payment-form">
@@ -93,18 +112,30 @@
   <p>&copy; 2025 TKBR. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- Load EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  emailjs.init("Zgef7WytC5eIgIUN0"); 
+  // Initialize EmailJS with your public key
+  (function () {
+    emailjs.init("Zgef7WytC5elglUN0");
+  })();
 
   const form = document.getElementById('payment-form');
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+  // Check if cart is empty
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    window.location.href = "/gwwwww/hw.html";
+    // Prevent further code execution
+    throw new Error("Cart is empty");
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const orderId = Math.floor(Math.random() * 1000000); // Random ID
+    const email = document.getElementById('email').value.trim();
+    const orderId = Math.floor(Math.random() * 1000000);
     let total = 0;
     let orderList = '';
 
@@ -120,21 +151,50 @@
       cost_total: total.toFixed(2)
     };
 
-    emailjs.send("service_r936b56", "template_msmined", templateParams)
+    // Optionally disable button and show feedback
+    const btn = form.querySelector('.addcart');
+    btn.disabled = true;
+    btn.textContent = "Processing...";
+
+    emailjs.send("service_3zto5s5", "__ejs-test-mail-service__", templateParams)
       .then(function (response) {
         alert("Order confirmed! Check your inbox.");
-        localStorage.removeItem('cart'); // Clear cart
-        window.location.href = "/gwwwww/hw.html"; // Redirect home
+        localStorage.removeItem('cart');
+        window.location.href = "/gwwwww/hw.html";
       }, function (error) {
         console.error("Email failed:", error);
-        alert("Something went wrong. Try again.");
+        alert("all done. confirmation email will be sent shorty.(jk this part dont works yet :) )");
+
+        btn.disabled = false;
+        btn.textContent = "Confirm & Pay";
       });
   });
-    // Check if cart is empty
-    if (cart.length === 0) {
-    alert("Your cart is empty.");
-    return;
-    }
+
+
+
+
+
+
+
+
+  const toggleButton = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            // Apply saved theme on load
+            if (localStorage.getItem("theme") === "dark") {
+              body.classList.add("darkmode");
+            }
+
+            toggleButton.addEventListener("click", () => {
+              body.classList.toggle("darkmode");
+
+              // Save preference
+              if (body.classList.contains("darkmode")) {
+                localStorage.setItem("theme", "dark");
+              } else {
+                localStorage.setItem("theme", "light");
+              }
+            });
 </script>
 
 </body>

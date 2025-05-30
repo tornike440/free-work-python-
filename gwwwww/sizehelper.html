@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Size Help</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      /* ========== Base Styles ========== */
+      body {
+        margin: 0;
+        font-family: fantasy;
+        background-color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ========== Top Bar ========== */
+      .topbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #333;
+        font-size: 0.9rem;
+        background-color: #1e1e1e;
+        color: #ffffff;
+      }
+
+      .topbar div {
+        margin-left: 1rem;
+        cursor: pointer;
+      }
+
+      .topbar div:hover {
+        text-decoration: underline;
+      }
+
+      /* ========== Header ========== */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #1e1e1e;
+        color: #ffffff;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      /* ========== Navigation ========== */
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        cursor: pointer;
+        position: relative;
+      }
+
+      nav ul li:hover {
+        color: #aaa;
+      }
+
+      /* Shop Item Hover Effect */
+      .shop-item {
+        position: relative;
+        z-index: 1;
+      }
+
+      .shop-item::after {
+        content: " ";
+        width: 0%;
+        height: 2px;
+        background: #ddded9;
+        display: block;
+        cursor: pointer;
+        transition: width 1.3s;
+        margin-top: 3px;
+      }
+
+      .shop-item:hover::after {
+        width: 100%;
+      }
+
+      /* ========== Dropdown ========== */
+      .shop-dropdown {
+        opacity: 0;
+        position: absolute;
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        padding: 1rem;
+        z-index: 1000;
+        transition: opacity 1s ease;
+        pointer-events: none;
+        color: #fff;
+      }
+
+      .shop-item:hover .shop-dropdown {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .shop-dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      /* Dropdown Item Hover Background (Modified) */
+      #dropdown-list li {
+        position: relative;
+      }
+
+      #dropdown-list li::after {
+        content: " ";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background: #ffffff;
+        display: block;
+        transition: width 1s;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      #dropdown-list li:hover::after {
+        width: 100%;
+      }
+
+      /* ========== Icons ========== */
+      .right-icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .right-icons div {
+        cursor: pointer;
+      }
+
+      .right-icons div:hover {
+        opacity: 0.7;
+      }
+
+      /* main */
+      .main {
+        font-family: "Barlow", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color: #0000009b;
+        margin: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      /* home>size help */
+      .location {
+        font-weight: 700;
+      }
+ 
+      .guide strong {
+        color: black;
+      }
+      .guide-list {
+        text-align: left;
+        transform: translate(10px);
+        max-width: 1098px;
+        font-size: 17px;
+      }
+
+      .tables-div p{
+        text-align: center;
+        color: #000;
+        font-size: 70px;
+        font-family: monospace;
+      }
+
+       .tables-div img{
+        transform: translate(50px);
+       }
+
+       .table3{
+        margin-bottom: 80px;
+       }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .slicer {
+        height: 2px;
+        background-color: #ffffff;
+        margin: 10px;
+      }
+      .ftpc {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table, th, td {
+        border: 2px solid #000000;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #414141;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div>
+        <img
+          src="georgia.png"
+          style="border-radius: 50%; max-width: 20px; height: 20px"
+          alt="georgia"
+        />
+        Georgia (CAD $)
+      </div>
+      <div>English</div>
+    </div>
+
+    <header>
+      <div class="logo"><a href="hw.html">TKBR</a></div>
+      <nav>
+        <ul>
+          <li class="shop-item">
+            <span>Shop ▼</span>
+            <div class="shop-dropdown">
+              <ul id="dropdown-list">
+                <li><a href="tshirts.html">T-Shirts</a></li>
+                <li><a href="hoodies.html">Hoodies</a></li>
+                <li><a href="zip.html">zip-ups</a></li>
+                <li><a href="./Outerwear.html">Outerwear</a></li>
+                <li><a href="bottoms.html">Bottoms</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="shop-item">Track Your Order</li>
+          <li class="shop-item">Size Help</li>
+          <li><a href="contact.html" class="shop-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="right-icons">
+        <div>CAD</div>
+        <div>🔍</div>
+        <div><a href="cart.html">🛒</a></div>
+      </div>
+    </header>
+    <div class="slicer"></div>
+
+    <main>
+      <div class="main">
+        <h1 style="font-weight: 600">Size Help</h1>
+        <div>
+          <a class="location" href="hw.html">Home</a>
+          <span>></span>
+          <p class="location" style="display: inline-block">Size Help</p>
+        </div>
+        <div class="sizes-main">
+          <h2
+            style="
+              text-align: center;
+              font-size: 40px;
+              margin-top: 70px;
+              font-weight: 500;
+            "
+          >
+            Size Helper
+          </h2>
+          <div class="guide">
+            <div class="guide-list">
+              <ol>
+                <p><strong>Customer Size Guide </strong></p>
+                <li>
+                  <strong> Usual Size (Regular Fit):</strong>For a standard,
+                  comfortable fit, we recommend choosing your usual size. Our
+                  products are designed to be true to size, and you can expect
+                  them to fit well and comfortably according to your regular
+                  size.
+                </li>
+                <li>
+                  <strong> Oversized Look</strong> If you're aiming for an
+                  oversized look or want some extra room for a more relaxed
+                  style, we suggest sizing up once. This will give you a looser
+                  and more relaxed fit, perfect for achieving that trendy
+                  oversized appearance.
+                </li>
+                <p>
+                  <strong>Measurement Tips:</strong>To ensure you select the
+                  right size, we also recommend taking your measurements and
+                  referring to our detailed size chart down below. This will
+                  help you match your measurements with our product dimensions,
+                  providing additional guidance to guarantee the perfect fit.
+                </p>
+                <p>
+                  <strong>Need Further Assistance?</strong>If you're still
+                  unsure about the sizing, our customer support team is here to
+                  assist you. Feel free to reach out to us with any questions or
+                  concerns about choosing the right size. We want you to be
+                  happy with your purchase and look great in our products!
+                <p style="margin-top: 60px;">SIZE CHARTS</p>
+                </p>
+              </ol>
+            </div>
+            <div class="tables-div">
+                <p>JEANS</p>
+                <table>
+                  <tr>
+                    <th rowspan="2">Size</th>
+                    <th colspan="2">To Fit Waist Size </th>
+                  </tr>
+                  <tr>
+                    <th>Inches</th>
+                    <th>CM</th>
+                  <tr>
+                    <td>26"</td>
+                    <td>26</td>
+                    <td>66</td>
+                  </tr>
+                  <tr>
+                    <td>28"</td>
+                    <td>28</td>
+                    <td>71</td>
+                  </tr>
+                  <tr>
+                    <td>29"</td>
+                    <td>29</td>
+                    <td>73.5</td>
+                  </tr>
+                  <tr>
+                    <td>30"</td>
+                    <td>30</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>31"</td>
+                    <td>31</td>
+                    <td>78.5</td>
+                  </tr>
+                  <tr>
+                    <td>32"</td>
+                    <td>32</td>
+                    <td>81</td>
+                  </tr>
+                  <tr>
+                    <td>33"</td>
+                    <td>33</td>
+                    <td>83.5</td>
+                  </tr>
+                  <tr>
+                    <td>34"</td>
+                    <td>34</td>
+                    <td>86</td>
+                  </tr>
+                  <tr>
+                    <td>36"</td>
+                    <td>36</td>
+                    <td>91</td>
+                  </tr>
+                  <tr>
+                    <td>38"</td>
+                    <td>38</td>
+                    <td>96</td>
+                  </tr>
+                </table>
+                <p>T-SHIRTS</p>
+                <table>
+                  <tr>
+                    <th rowspan="2">Size</th>
+                    <th colspan="2">To Fit Chest Size</th>
+                    <th colspan="2">To Fit Neck Size</th>
+                  </tr>
+                  <tr>
+                    <th>Inches</th>
+                    <th>CM</th>
+                    <th>Inches</th>
+                    <th>CM</th>
+                  </tr>
+                  <tr>
+                    <td>XXXS</td>
+                    <td>30-32</td>
+                    <td>76-81</td>
+                    <td>14</td>
+                    <td>36</td>
+                  </tr>
+                  <tr>
+                    <td>XXS</td>
+                    <td>32-34</td>
+                    <td>81-86</td>
+                    <td>14.5</td>
+                    <td>37.5</td>
+                  </tr>
+                  <tr>
+                    <td>XS</td>
+                    <td>34-36</td>
+                    <td>86-91</td>
+                    <td>15</td>
+                    <td>38.5</td>
+                  </tr>
+                  <tr>
+                    <td>S</td>
+                    <td>36-38</td>
+                    <td>91-96</td>
+                    <td>15.5</td>
+                    <td>39.5</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>38-40</td>
+                    <td>96-101</td>
+                    <td>16</td>
+                    <td>41.5</td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td>40-42</td>
+                    <td>101-106</td>
+                    <td>17</td>
+                    <td>43.5</td>
+                  </tr>
+                  <tr>
+                    <td>XL</td>
+                    <td>42-44</td>
+                    <td>106-111</td>
+                    <td>17.5</td>
+                    <td>45.5</td>
+                  </tr>
+                  <tr>
+                    <td>XXL</td>
+                    <td>44-46</td>
+                    <td>111-116</td>
+                    <td>18.5</td>
+                    <td>47.5</td>
+                  </tr>
+                  <tr>
+                    <td>XXXL</td>
+                    <td>46-48</td>
+                    <td>116-121</td>
+                    <td>19.5</td>
+                    <td>49.5</td>
+                  </tr>
+                </table>
+                <p>HOODIE MEASUREMENT</p>
+                <table>
+                  <tr>
+                    <th rowspan="2">Size</th>
+                    <th colspan="2">Chest Measurement</th>
+                  </tr>
+                  <tr>
+                    <th>Inches</th>
+                    <th>CM</th>
+                  </tr>
+                  <tr>
+                    <td>XXXS</td>
+                    <td>30-32</td>
+                    <td>76-81</td>
+                  </tr>
+                  <tr>
+                    <td>XXS</td>
+                    <td>32-34</td>
+                    <td>81-86</td>
+                  </tr>
+                  <tr>
+                    <td>XS</td>
+                    <td>34-36</td>
+                    <td>86-91</td>
+                  </tr>
+                  <tr>
+                    <td>S</td>
+                    <td>36-38</td>
+                    <td>91-96</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>38-40</td>
+                    <td>96-101</td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td>40-42</td>
+                    <td>101-106</td>
+                  </tr>
+                  <tr>
+                    <td>XL</td>
+                    <td>42-44</td>
+                    <td>106-111</td>
+                  </tr>
+                  <tr>
+                    <td>XXL</td>
+                    <td>44-46</td>
+                    <td>111-116</td>
+                  </tr>
+                  <tr>
+                    <td>XXXL</td>
+                    <td>46-48</td>
+                    <td>116-121</td>
+                  </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; TKBR</p>
+      <p>all rights reserved</p>
+      <p>2025</p>
+      <p>Contact Us and</p>
+      <p>Follow us on:</p>
+      <p>
+        <a href="https://www.facebook.com/tornike.beridze.1213"
+          ><img src="fb.png" class="ftpc" alt="" />Facebook</a
+        >
+        |
+        <a href="https://www.instagram.com/tkbr_1q231/"
+          ><img src="instagram.png" class="ftpc" alt="" />Instagram</a
+        >
+        |
+        <a href="https://github.com/tornike440/GOA-projects"
+          ><img src="github.png" class="ftpc" alt="" />GitHub</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

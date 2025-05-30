@@ -1,301 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Savoy West Product Page</title>
-  <style>
-body {
-  margin: 0;
-  font-family: fantasy;
-  background-color: #121212;
-  color: #ffffff;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKBR</title>
+    <style>
+      /* ========== Base Styles (Light Mode) ========== */
+      body {
+        margin: 0;
+        background-color: #fdfdfd;
+        color: #222222;
+        font-family: sans-serif;
+      }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-/* ========== Top Bar ========== */
-.topbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #333;
-  font-size: 0.9rem;
-  background-color: #1e1e1e;
-}
+      /* ========== Topbar ========== */
+      .topbar {
+        font-family: fantasy;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #ccc;
+        font-size: 0.9rem;
+        background-color: #eee;
+      }
 
-.topbar div {
-  margin-left: 1rem;
-  cursor: pointer;
-}
+      .topbar div {
+        font-family: fantasy;
+        margin-left: 1rem;
+        cursor: pointer;
+      }
 
-.topbar div:hover {
-  text-decoration: underline;
-}
+      .topbar div:hover {
+        text-decoration: underline;
+      }
 
-/* ========== Header ========== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #1e1e1e;
-}
+      /* ========== Header ========== */
+      header {
+        font-family: fantasy;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #fafafa;
+      }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-}
+      .logo {
+        font-family: fantasy;
+        font-size: 2rem;
+        font-weight: bold;
+      }
 
-/* ========== Navigation ========== */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
+      /* ========== Navigation ========== */
+      nav ul {
+        font-family: fantasy;
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
 
-nav ul li {
-  cursor: pointer;
-  position: relative;
-}
+      nav ul li {
+        font-family: fantasy;
+        cursor: pointer;
+        position: relative;
+      }
 
-nav ul li:hover {
-  color: #aaa;
-}
+      nav ul li:hover {
+        color: #000;
+      }
 
-/* Shop Item Hover Effect */
-.shop-item {
-  position: relative;
-  z-index: 1;
-}
+      .shop-item {
+        font-family: fantasy;
+        position: relative;
+        z-index: 1;
+      }
 
-.shop-item::after {
-  content: " ";
-  width: 0%;
-  height: 2px;
-  background: #ddded9;
-  display: block;
-  cursor: pointer;
-  transition: width 1.3s;
-  margin-top: 3px;
-}
+      .shop-item::after {
+        font-family: fantasy;
+        content: " ";
+        width: 0%;
+        height: 2px;
+        background: #333;
+        display: block;
+        cursor: pointer;
+        transition: width 1.3s;
+        margin-top: 3px;
+      }
 
-.shop-item:hover::after {
-  width: 100%;
-}
+      .shop-item:hover::after {
+        width: 100%;
+      }
 
-/* ========== Dropdown ========== */
-.shop-dropdown {
-  opacity: 0;
-  position: absolute;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  padding: 1rem;
-  z-index: 1000;
-  transition: opacity 1s ease;
-  pointer-events: none;
-  color: #fff;
-}
+      .shop-dropdown {
+        font-family: fantasy;
+        opacity: 0;
+        position: absolute;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 1rem;
+        z-index: 1000;
+        transition: opacity 1s ease;
+        pointer-events: none;
+        color: #222;
+      }
 
-.shop-item:hover .shop-dropdown {
-  opacity: 1;
-  pointer-events: auto;
-}
+      .shop-item:hover .shop-dropdown {
+        opacity: 1;
+        pointer-events: auto;
+      }
 
-.shop-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+      .shop-dropdown ul {
+        font-family: fantasy;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
 
-/* Dropdown Item Hover Background (Modified) */
-#dropdown-list li {
-  position: relative;
-}
+      #dropdown-list li {
+        position: relative;
+      }
 
-#dropdown-list li::after {
-  content: " ";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  background: #ffffff;
-  display: block;
-  transition: width 1s;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+      #dropdown-list li::after {
+        font-family: fantasy;
+        content: " ";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background: #000;
+        display: block;
+        transition: width 1s;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
 
-#dropdown-list li:hover::after {
-  width: 100%;
-}
+      #dropdown-list li:hover::after {
+        width: 100%;
+      }
 
-/* ========== Icons ========== */
-.right-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+      /* ========== Right Icons ========== */
+      .right-icons {
+        font-family: fantasy;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
 
-.right-icons div {
-  cursor: pointer;
-}
+      .right-icons div {
+        cursor: pointer;
+        font-family: fantasy;
+      }
 
-.right-icons div:hover {
-  opacity: 0.7;
-}
+      .right-icons div:hover {
+        opacity: 0.7;
+      }
 
-    /* Product Page */
-    .product-page {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 2rem;
-    }
+      /* ========== Product Page ========== */
+      .product-page {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+      }
 
-    .thumbnails {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 125px;
-    }
+      /* ========== Thumbnails ========== */
+      .thumbnails {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 125px;
+      }
 
-    .thumbnails img {
-      width: 60px;
-      height: 80px;
-      object-fit: cover;
-      border: 1px solid #444;
-      cursor: pointer;
-    }
+      .thumbnails img {
+        width: 60px;
+        height: 80px;
+        object-fit: cover;
+        border: 1px solid #aaa;
+        cursor: pointer;
+      }
 
-    .main-image {
-      flex: 2;
-      text-align: center;
-    }
+      .thumbnails img:hover {
+        border: 2px solid #ff5252;
+      }
 
-    .main-image img {
-      max-width: 100%;
-      max-height: 600px;
-      object-fit: contain;
-    }
+      .thumbnail {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
 
-    .details {
-      flex: 2;
-      padding: 0 2rem;
-    }
+      .thumbnail:hover {
+        transform: scale(3) translateX(20px) translateY(0px);
+      }
 
-    .price {
-      font-size: 1.5rem;
-      color: #ff5252;
-    }
+      /* ========== Main Image ========== */
+      .main-image {
+        flex: 2;
+        text-align: center;
+      }
 
-    .original-price {
-      margin-left: 10px;
-      color: #888;
-      text-decoration: line-through;
-    }
+      .main-image img {
+        max-width: 100%;
+        max-height: 600px;
+        object-fit: contain;
+      }
 
-    .par {
-      max-width: 400px;
-      border-radius: 5px;
-      color: #ddd;
-    }
+      /* ========== Details ========== */
+      .details {
+        flex: 2;
+        padding: 0 2rem;
+      }
 
-    .size-select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1px solid #444;
-      background-color: #000;
+      /* ========== Price ========== */
+      .price {
+        font-size: 1.5rem;
+        color: #222;
+      }
+
+      .original-price {
+        margin-left: 10px;
+        color: #888;
+        text-decoration: line-through;
+      }
+
+      /* ========== Paragraph ========== */
+      .par {
+        max-width: 400px;
+        border-radius: 5px;
+        color: #333;
+      }
+
+      /* ========== Size Select ========== */
+      .size-select {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .size-select:hover {
+        background-color: #eee;
+        transform: scale(1.1);
+      }
+
+      /* ========== Add to Cart ========== */
+      .addcart {
+      background-color: #303030;  
       color: #fff;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .size-select:hover {
-      background-color: #333;
-      transform: scale(1.1);
-    }
-
-    .addcart {
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #444;
+      border: none;
       border-radius: 15px;
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      font-size: 1rem;
-      margin: 1rem 0;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin: 15px;
     }
 
     .addcart:hover {
       transform: scale(1.1);
+      background-color: #0056b3;
     }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #000;
+      /* ========== Footer ========== */
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #f0f0f0;
+        color: #222;
+      }
+
+      /* ========== Dark Mode ========== */
+      body.darkmode {
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      body.darkmode .topbar {
+        background-color: #1e1e1e;
+        border-bottom: 1px solid #333;
+      }
+
+      body.darkmode .topbar div:hover {
+        text-decoration: underline;
+      }
+
+      body.darkmode header {
+        background-color: #1e1e1e;
+      }
+
+      body.darkmode nav ul li:hover {
+        color: #aaa;
+      }
+
+      body.darkmode .shop-item::after {
+        background: #ddded9;
+      }
+
+      body.darkmode .shop-dropdown {
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        color: #fff;
+      }
+
+      body.darkmode #dropdown-list li::after {
+        background: #ffffff;
+      }
+
+      body.darkmode .right-icons div:hover {
+        opacity: 0.7;
+      }
+
+      body.darkmode .thumbnails img {
+        border: 1px solid #444;
+      }
+
+      body.darkmode .main-image img {
+        background-color: transparent;
+      }
+
+      body.darkmode .price {
+        color: #ffffff;
+      }
+
+      body.darkmode .original-price {
+        color: #888;
+      }
+
+      body.darkmode .par {
+        color: #ddd;
+      }
+
+      body.darkmode .size-select {
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #444;
+      }
+
+      body.darkmode .size-select:hover {
+        background-color: #333;
+      }
+
+      body.darkmode .addcart {
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #444;
+      }
+
+      body.darkmode .addcart:hover {
+        background-color: #000;
+      }
+
+      body.darkmode footer {
+        background-color: #000;
+        color: #fff;
+      }
+      button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    body.darkmode button {
+      background-color: #444;
       color: #fff;
     }
+    body.darkmode button:hover {
+      background-color: #666;
+    }  
+
   </style>
 </head>
 <body>
 
   <div class="topbar">
     <div>
-      <img src="/gwwwww/georgia.png" style="max-width: 20px; height: 20px;border-radius: 10px;" alt="georgia">
+      <img src="georgia.png" style="max-width: 20px; height: 20px;border-radius: 10px;" alt="georgia">
       Georgia (CAD $) ▼
     </div>
     <div>English ▼</div>
   </div>
     <header>
-      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <div class="logo"><a href="hw.html">TKBR</a></div>
       <nav>
         <ul>
           <li class="shop-item">
             <span>Shop ▼</span>
             <div class="shop-dropdown">
               <ul id="dropdown-list">
-                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-                <li>Outerwear</li>
-                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+                <li><a href="tshirts.html">T-Shirts</a></li>
+                <li><a href="hoodies.html">Hoodies</a></li>
+                <li><a href="zip.html">zip-ups</a></li>
+                <li><a href="Outerwear.html">Outerwear</a></li>
+                <li><a href="bottoms.html">Bottoms</a></li>
               </ul>
             </div>
           </li>
-          <li class="shop-item">Track Your Order</li>
-          <li class="shop-item">Size Help</li>
-          <li><a href="/gwwwww/contact.html" class="shop-item">Contact</a></li>
+          <li class="shop-item">Track Your Order(coming soon)</li>
+          <li class="shop-item">Size Help(coming soon)</li>
+          <li><a href="contact.html" class="shop-item">Contact</a></li>
         </ul>
       </nav>
       <div class="right-icons">
-        <div>CAD</div>
+        <div><button id="theme-toggle">Toggle Dark/white Mode</button></div>
         <div>🔍</div>
-        <div><a href="/gwwwww/cart.html">🛒</a></div>
+        <div><a href="cart.html">🛒</a></div>
       </div>
     </header>
 
   <div class="product-page">
     <div class="thumbnails">
-      <img src="/gwwwww/bj1.png" alt="thumb1">
-      <img src="/gwwwww/bj2.png" alt="thumb2">
-      <img src="/gwwwww/bj3.png" alt="thumb3">
-      <img src="/gwwwww/bj4.png" alt="thumb4">
+      <img src="bj1.png" alt="thumb1" class="thumbnail">
+      <img src="bj2.png" alt="thumb2" class="thumbnail">
+      <img src="bj3.png" alt="thumb3" class="thumbnail">
+      <img src="bj4.png" alt="thumb4" class="thumbnail">
     </div>
 
     <div class="main-image">
-      <img src="/gwwwww/blackjeans.png" alt="main product">
+      <img src="blackjeans.png" alt="main product">
     </div>
 
     <div class="details">
@@ -323,7 +461,7 @@ nav ul li:hover {
         </select>
       </div>
 
-      <button class="addcart" onclick="addToCart('black washed jeans', 29.99, '/gwwwww/blackjeans.png')">Add to Cart</button>
+      <button class="addcart" onclick="addToCart('black washed jeans', 29.99, 'blackjeans.png')">Add to Cart</button>
     </div>
   </div>
     <script>
@@ -333,6 +471,24 @@ nav ul li:hover {
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${name} has been added to your cart!`);
         }
+        const toggleButton = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            // Apply saved theme on load
+            if (localStorage.getItem("theme") === "dark") {
+              body.classList.add("darkmode");
+            }
+
+            toggleButton.addEventListener("click", () => {
+              body.classList.toggle("darkmode");
+
+              // Save preference
+              if (body.classList.contains("darkmode")) {
+                localStorage.setItem("theme", "dark");
+              } else {
+                localStorage.setItem("theme", "light");
+              }
+            });
     </script>
 
   <footer>

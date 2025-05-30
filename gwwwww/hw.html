@@ -6,311 +6,419 @@
     <title>TKBR</title>
     <style>
 /* ========== Base Styles ========== */
-body {
-  margin: 0;
-  font-family: fantasy;
-  background-color: #121212;
-  color: #ffffff;
-}
+    
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fdfdfd;  
+      color: #222222;             
+      transition: all 0.3s ease;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    /* Topbar base */
+    .topbar {
+      font-family: fantasy;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ccc;
+      font-size: 0.9rem;
+      background-color: #eee;       
+    }
 
-/* ========== Top Bar ========== */
-.topbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #333;
-  font-size: 0.9rem;
-  background-color: #1e1e1e;
-}
+    .topbar div {
+      font-family: fantasy;
+      margin-left: 1rem;
+      cursor: pointer;
+      color: #444;        
+    }
 
-.topbar div {
-  margin-left: 1rem;
-  cursor: pointer;
-}
+    .topbar div:hover {
+      text-decoration: underline;
+      color: #000;     
+    }
 
-.topbar div:hover {
-  text-decoration: underline;
-}
+    /* Header base */
+    header {
+      font-family: fantasy;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fafafa;  
+      color: #222;
+    }
 
-/* ========== Header ========== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #1e1e1e;
-}
+    .logo {
+      font-family: fantasy;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #222;
+    }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-}
+   
+    nav ul {
+      font-family: fantasy;
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ========== Navigation ========== */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
+    nav ul li {
+      font-family: fantasy;
+      cursor: pointer;
+      position: relative;
+      color: #444; 
+    }
+    nav ul li a {
+      color: inherit; 
+      text-decoration: none; 
+    }
 
-nav ul li {
-  cursor: pointer;
-  position: relative;
-}
+    nav ul li:hover {
+      color: #000;  
+    }
+    nav ul li:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-nav ul li:hover {
-  color: #aaa;
-}
+    /* Shop dropdown base */
+    .shop-dropdown {
+      font-family: fantasy;
+      opacity: 0;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      z-index: 1000;
+      transition: opacity 1s ease;
+      pointer-events: none;
+      color: #222;
+    }
 
-/* Shop Item Hover Effect */
-.shop-item {
-  position: relative;
-  z-index: 1;
-}
+    .shop-item:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-.shop-item::after {
-  content: " ";
-  width: 0%;
-  height: 2px;
-  background: #ddded9;
-  display: block;
-  cursor: pointer;
-  transition: width 1.3s;
-  margin-top: 3px;
-}
+    .shop-dropdown ul {
+      font-family: fantasy;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-.shop-item:hover::after {
-  width: 100%;
-}
+    #dropdown-list li {
+      position: relative;
+      color: #444;
+    }
 
-/* ========== Dropdown ========== */
-.shop-dropdown {
-  opacity: 0;
-  position: absolute;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  padding: 1rem;
-  z-index: 1000;
-  transition: opacity 1s ease;
-  pointer-events: none;
-  color: #fff;
-}
+    #dropdown-list li::after {
+      content: " ";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: #00000033;
+      display: block;
+      transition: width 1s;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
 
-.shop-item:hover .shop-dropdown {
-  opacity: 1;
-  pointer-events: auto;
-}
+    #dropdown-list li:hover::after {
+      width: 100%;
+    }
 
-.shop-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+    /* Right icons base */
+    .right-icons {
+      font-family: fantasy;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-/* Dropdown Item Hover Background (Modified) */
-#dropdown-list li {
-  position: relative;
-}
+    .right-icons div {
+      cursor: pointer;
+      font-family: fantasy;
+      color: #555; 
+    }
 
-#dropdown-list li::after {
-  content: " ";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  background: #ffffff;
-  display: block;
-  transition: width 1s;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+    .right-icons div:hover {
+      opacity: 0.7;
+    }
 
-#dropdown-list li:hover::after {
-  width: 100%;
-}
+    /* Hero section base */
+    .hero {
+      text-align: center;
+      padding: 2rem;
+      background-color: #e8f0fe; 
+      color: #222;
+    }
 
-/* ========== Icons ========== */
-.right-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+    /* Products section base */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #fff; 
+      color: #222;
+    }
 
-.right-icons div {
-  cursor: pointer;
-}
+    .product {
+      flex: 1 1 calc(33% - 2rem);
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      background-color: #fafafa;
+      padding: 1rem;
+      text-align: center;
+      color: #222;
+    }
 
-.right-icons div:hover {
-  opacity: 0.7;
-}
+    .product img {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+    }
 
-/* ========== Hero Section ========== */
-.hero {
-  text-align: center;
-  padding: 2rem;
-  background-color: #1a1a1a;
-}
+    /* Add to Cart Button base */
+    .addcart {
+      background-color: #303030;  
+      color: #fff;
+      border: none;
+      border-radius: 15px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
 
-/* ========== Product Grid ========== */
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
-}
+    .addcart:hover {
+      transform: scale(1.1);
+      background-color: #0056b3;
+    }
 
-.product {
-  flex: 1 1 calc(33% - 2rem);
-  box-sizing: border-box;
-  border: 1px solid #333;
-  background-color: #1e1e1e;
-  padding: 1rem;
-  text-align: center;
-  color: #fff;
-}
+    /* Banner base */
+    .banner {
+      background: #d9e8ff;  /* very light blue */
+      color: #222;
+      padding: 2rem;
+      margin: 70px;
+      display: flex;
+      justify-content: center;
+    }
 
-.product img {
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-}
+    .banner-content {
+      text-align: center;
+    }
 
-/* ========== Add to Cart Button ========== */
-.addcart {
-  background-color: #fff;
-  color: #000;
-  border: none;
-  border-radius: 15px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+    /* Email button base */
+    .email button {
+      background-color: #007bff;
+      color: #fff;
+    }
 
-.addcart:hover {
-  transform: scale(1.5);
-  background-color: #ccc;
-}
+    /* Pliusebi section base */
+    .pliusebi-section {
+      background-color: #f1f1f1;
+      color: #222;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+    }
 
-/* ========== Misc Styles ========== */
-.ftpc {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
+    /* Footer base */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f8f8f8;
+      color: #444;
+    }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #000;
-  color: #fff;
-}
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
 
-.slicer {
-  height: 2px;
-  background-color: #333;
-  margin: 10px;
-}
+    a:hover {
+      color: #0056b3;
+    }
 
-/* ========== Banner & Registration Section ========== */
-.banner {
-  background: #000;
-  color: white;
-  padding: 2rem;
-  margin: 70px;
-  display: flex;
-  justify-content: center;
-}
+    /* ========== Dark Mode Styles ========== */
+    body.darkmode {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: sans-serif;
+    }
 
-.banner-content {
-  text-align: center;
-}
+    /* Topbar dark mode */
+    body.darkmode .topbar {
+      background-color: #222;
+      border-bottom: 1px solid #555;
+      color: #ddd;
+    }
 
-.registrireba {
-  margin-top: 1rem;
-}
+    body.darkmode .topbar div:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
 
-.registrireba label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
+    /* Header dark mode */
+    body.darkmode header {
+      background-color: #222;
+      color: #fff;
+    }
 
-/* Email Subscription */
-.email {
-  display: flex;
-  justify-content: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
+    /* Navigation dark mode */
+    body.darkmode nav ul li {
+      color: #ccc;
+    }
 
-.email input {
-  flex: 1;
-  padding: 0.75rem;
-  border: none;
-  outline: none;
-}
+    body.darkmode nav ul li:hover {
+      color: #eee;
+    }
 
-.email button {
-  background: #000;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  cursor: pointer;
-}
+    body.darkmode .shop-dropdown {
+      background-color: #333;
+      border-color: #555;
+      color: #eee;
+    }
 
-/* ========== Feature Section (pliusebi) ========== */
-.pliusebi-section {
-  background: #3a3a3a;
-  color: black;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
-}
+    body.darkmode #dropdown-list li::after {
+      background: #fff;
+    }
 
-.pliusebi-list {
-  display: flex;
-  gap: 3rem;
-  text-align: center;
-}
+    /* Right icons dark mode */
+    body.darkmode .right-icons div {
+      color: #ddd;
+    }
 
-#van-img {
-  width: 100px;
-}
+    body.darkmode .right-icons div:hover {
+      opacity: 0.7;
+    }
 
-#reverse {
-  width: 100px;
-}
+    /* Hero section dark mode */
+    body.darkmode .hero {
+      background-color: #1a1a1a;
+      color: #eee;
+    }
 
-#card {
-  width: 100px;
-}
+    /* Products section dark mode */
+    body.darkmode .products {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
 
-.li1 span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
+    body.darkmode .product {
+      background-color: #222;
+      border-color: #444;
+      color: #eee;
+    }
+
+    body.darkmode .product h2, 
+    body.darkmode .product p {
+      color: #eee;
+    }
+
+    body.darkmode .addcart {
+      background-color: #444;
+      color: #eee;
+    }
+
+    body.darkmode .addcart:hover {
+      background-color: #666;
+    }
+
+    /* Banner dark mode */
+    body.darkmode .banner {
+      background-color: #111;
+      color: #ddd;
+    }
+
+    body.darkmode .email button {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Pliusebi section dark mode */
+    body.darkmode .pliusebi-section {
+      background-color: #222;
+      color: #eee;
+    }
+
+    /* Footer dark mode */
+    body.darkmode footer {
+      background-color: #000;
+      color: #ccc;
+    }
+
+    body.darkmode a {
+      color: #ccc;
+    }
+
+    body.darkmode a:hover {
+      color: #fff;
+    }
+    .ftpc {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .pliusebi-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+    }
+    .li1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0 20px;
+    }
+    .li1 img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    body.darkmode button {
+      background-color: #444;
+      color: #fff;
+    }
+    body.darkmode button:hover {
+      background-color: #666;
+    }    
+
 
     </style>
   </head>
-  <body>
+<body>
     <div class="topbar">
       <div>
         <img
-          src="/gwwwww/georgia.png"
+          src="georgia.png"
           style="border-radius: 50%; max-width: 20px; height: 20px"
           alt="georgia"
         />
@@ -320,34 +428,34 @@ footer {
     </div>
 
     <header>
-      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <div class="logo"><a href="hw.html">TKBR</a></div>
       <nav>
         <ul>
           <li class="shop-item">
             <span>Shop ▼</span>
             <div class="shop-dropdown">
               <ul id="dropdown-list">
-                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-                <li>Outerwear</li>
-                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+                <li><a href="tshirts.html">T-Shirts</a></li>
+                <li><a href="hoodies.html">Hoodies</a></li>
+                <li><a href="zip.html">zip-ups</a></li>
+                <li><a href="Outerwear.html">Outerwear</a></li>
+                <li><a href="bottoms.html">Bottoms</a></li>
               </ul>
             </div>
           </li>
-          <li class="shop-item">Track Your Order</li>
-          <li class="shop-item">Size Help</li>
-          <li><a href="/gwwwww/contact.html" class="shop-item">Contact</a></li>
+          <li class="shop-item">Track Your Order(COMING SOON)</li>
+          <li class="shop-item"><a href="sizehelper.html">Size Help</a></li>
+          <li><a href="contact.html" class="shop-item">Contact</a></li>
         </ul>
       </nav>
       <div class="right-icons">
-        <div>CAD</div>
+        <div><button id="theme-toggle">Toggle Dark/white Mode</button></div>
         <div>🔍</div>
-        <div><a href="/gwwwww/cart.html">🛒</a></div>
+        <div><a href="cart.html">🛒</a></div>
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" >
       <h1>Free Shipping Over $70 USD</h1>
       <p>14-Day Money Back Guarantee</p>
     </section>
@@ -359,26 +467,26 @@ footer {
 
     <section class="products">
       <div class="product">
-        <img src="/gwwwww/sweatshirt.png" alt="Product 1" />
+        <img src="sweatshirt.png" alt="Product 1" />
         <h2>V2 ALIEN SWEATER "GRANIT GREY"</h2>
         <p>$129.99</p>
-        <a href="/gwwwww/sweatshirt.html"
+        <a href="sweatshirt.html"
           ><button class="addcart">add to cart</button></a
         >
       </div>
       <div class="product">
-        <img src="/gwwwww/blackjeans.png" alt="Product 2" />
+        <img src="blackjeans.png" alt="Product 2" />
         <h2>Vintage Jeans</h2>
         <p>$49.99</p>
-        <a href="/gwwwww/blackjeans.html"
+        <a href="blackjeans.html"
           ><button class="addcart">add to cart</button></a
         >
       </div>
       <div class="product">
-        <img src="/gwwwww/image.png" alt="Product 3" />
+        <img src="image.png" alt="Product 3" />
         <h2>Heavyweight Washed zip-up</h2>
         <p>$79.99</p>
-        <a href="/gwwwww/GREYZIP.html"
+        <a href="GREYZIP.html"
           ><button class="addcart">add to cart</button></a
         >
       </div>
@@ -392,7 +500,7 @@ footer {
           <label>Join Our Community</label>
           <div class="email">
             <input type="email" placeholder="Email" />
-            <button>Send</button>
+            <a href="contact.html"><button style="background-color: #131313; border-radius: 5px; margin: 5px;">Send</button></a>
           </div>
         </div>
       </div>
@@ -420,7 +528,7 @@ footer {
 
     <!-- damateba -->
 
-    <footer>
+    <footer style="background-color: #151515;">
       <p>&copy; TKBR</p>
       <p>all rights reserved</p>
       <p>2025</p>
@@ -428,17 +536,38 @@ footer {
       <p>Follow us on:</p>
       <p>
         <a href="https://www.facebook.com/tornike.beridze.1213"
-          ><img src="/gwwwww/fb.png" class="ftpc" alt="" />Facebook</a
+          ><img src="facebook.png" class="ftpc" alt="" />Facebook</a
         >
         |
-        <a href="https://www.instagram.com/tornike.beridze.1213/"
-          ><img src="/gwwwww/instagram.png" class="ftpc" alt="" />Instagram</a
+        <a href="https://www.instagram.com/tkbr_1q231/"
+          ><img src="instagram.svg" class="ftpc" alt="" />Instagram</a
         >
         |
-        <a href="https://github.com/tornike440/GOA-projects"
-          ><img src="/gwwwww/github.png" class="ftpc" alt="" />GitHub</a
+        <a href="https://github.com/tornike440/TKBR"
+          ><img src="github.png" class="ftpc" alt="" />GitHub</a
         >
       </p>
     </footer>
+
+    <script>
+            const toggleButton = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            // Apply saved theme on load
+            if (localStorage.getItem("theme") === "dark") {
+              body.classList.add("darkmode");
+            }
+
+            toggleButton.addEventListener("click", () => {
+              body.classList.toggle("darkmode");
+
+              // Save preference
+              if (body.classList.contains("darkmode")) {
+                localStorage.setItem("theme", "dark");
+              } else {
+                localStorage.setItem("theme", "light");
+              }
+            });
+    </script>
   </body>
 </html>
